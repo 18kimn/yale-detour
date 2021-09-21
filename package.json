@@ -30,6 +30,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "license": "Hippocratic-2.1",
   "browserslist": {
     "production": [
       ">0.2%",
