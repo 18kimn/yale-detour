@@ -1,10 +1,10 @@
-import React from "react";
-import AboutBody from "./components/About/AboutBody";
-import AboutPrivacy from "./components/About/AboutPrivacy";
+import React from 'react'
+import AboutBody from './components/About/AboutBody'
+import AboutPrivacy from './components/About/AboutPrivacy'
 
 const routes = {
-  "/": () => <AboutBody />,
-  "/privacy": () => <AboutPrivacy />,
-};
+  '/': () => <AboutBody />,
+  '/privacy': () => <AboutPrivacy />,
+}
 
-export default routes;
+export default routes

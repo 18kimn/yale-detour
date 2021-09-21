@@ -1,5 +1,5 @@
-import React from "react";
-import "./index.css";
+import React from 'react'
+import './index.css'
 
 const Sidebar = () => {
   return (
@@ -19,7 +19,7 @@ const Sidebar = () => {
         </h3>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

@@ -1,5 +1,5 @@
 .marker {
-  background-image: url("/images/marker.png");
+  background-image: url('/images/marker.png');
   background-size: cover;
   filter: invert(32%) sepia(1%) saturate(2785%) hue-rotate(324deg)
     brightness(101%) contrast(87%);
@@ -9,7 +9,7 @@
 }
 
 .mapboxgl-popup-content {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: black;
   padding: 0.8rem;
 }

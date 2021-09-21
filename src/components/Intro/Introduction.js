@@ -1,23 +1,23 @@
-import React, { useState, useContext } from "react";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import "./Introduction.css";
-import logo from "./logo.svg";
-import GuidedContext from "../../guided-context";
+import React, {useState, useContext} from 'react'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+import './Introduction.css'
+import logo from './logo.svg'
+import GuidedContext from '../../guided-context'
 
 const Introduction = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(true)
   const handleClose = () => {
-    setShow(false);
-    setGuided(false);
-  };
+    setShow(false)
+    setGuided(false)
+  }
 
   // Use the context created by App.js
-  const [guided, setGuided] = useContext(GuidedContext);
+  const [guided, setGuided] = useContext(GuidedContext)
   const handleGuided = () => {
-    setGuided(true);
-    setShow(false);
-  };
+    setGuided(true)
+    setShow(false)
+  }
 
   return (
     <Modal
@@ -38,13 +38,14 @@ const Introduction = () => {
       <Modal.Body className="text-center pl-5 pr-5 introduction-text">
         <h1 className="pt-1 pb-2">Critical History Map</h1>
         <p>
-          Yale University’s namesake is Elihu Yale, a slave trader and the
-          governor of the British East India Company responsible for over a
-          century of colonial rule in India. This Critical History Map was
-          developed with two ambitions in mind: (1) to think about how Yale’s
-          history as a colonial institution remains embedded in its architecture
-          and landscape in the present-day and (2) to highlight sites where Yale
-          students and New Haven residents have changed the course of the
+          Yale University’s namesake is Elihu Yale, a slave trader and
+          the governor of the British East India Company responsible
+          for over a century of colonial rule in India. This Critical
+          History Map was developed with two ambitions in mind: (1) to
+          think about how Yale’s history as a colonial institution
+          remains embedded in its architecture and landscape in the
+          present-day and (2) to highlight sites where Yale students
+          and New Haven residents have changed the course of the
           university’s history through remarkable moments of struggle.
         </p>
       </Modal.Body>
@@ -57,7 +58,7 @@ const Introduction = () => {
         </Button>
       </Modal.Footer>
     </Modal>
-  );
-};
+  )
+}
 
-export default Introduction;
+export default Introduction
