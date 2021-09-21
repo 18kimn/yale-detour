@@ -8,15 +8,15 @@ When you visit the Site, we automatically collect certain information about your
 
 We collect Device Information using the following technologies:
 
-* “Cookies” are data files that are placed on your device or computer and often include an anonymous unique identifier. For more information about cookies, and how to disable cookies, visit [http://www.allaboutcookies.org](http://www.allaboutcookies.org).
+- “Cookies” are data files that are placed on your device or computer and often include an anonymous unique identifier. For more information about cookies, and how to disable cookies, visit [http://www.allaboutcookies.org](http://www.allaboutcookies.org).
 
-* “Log files” track actions occurring on the Site, and collect data including your IP address, browser type, Internet service provider, referring/exit pages, and date/time stamps.
+- “Log files” track actions occurring on the Site, and collect data including your IP address, browser type, Internet service provider, referring/exit pages, and date/time stamps.
 
 We use the following third-party technologies that may not follow the practices in this Privacy Policy when you visit the Site.
 
-* [Mapbox](https://www.mapbox.com/legal/privacy)
-* [Netlify](https://www.netlify.com/privacy/)
-* [Typeform](https://admin.typeform.com/to/dwk6gt)
+- [Mapbox](https://www.mapbox.com/legal/privacy)
+- [Netlify](https://www.netlify.com/privacy/)
+- [Typeform](https://admin.typeform.com/to/dwk6gt)
 
 When we talk about “Personal Information” in this Privacy Policy, we are talking both about Device Information and Account Information.
 
@@ -26,7 +26,7 @@ We use the Device Information that we collect to help us screen for potential ri
 
 ## Sharing Your Personal Information
 
-We share your Personal Information with third parties to help us use your Personal Information, as described above. We use Google Analytics to help us understand how our visitors use the Site--you can read more about how Google uses your Personal Information [here](https://www.google.com/intl/en/policies/privacy/).  You can also opt-out of Google Analytics [here](https://tools.google.com/dlpage/gaoptout). 
+We share your Personal Information with third parties to help us use your Personal Information, as described above. We use Google Analytics to help us understand how our visitors use the Site--you can read more about how Google uses your Personal Information [here](https://www.google.com/intl/en/policies/privacy/). You can also opt-out of Google Analytics [here](https://tools.google.com/dlpage/gaoptout).
 
 Finally, we may also share your Personal Information to comply with applicable laws and regulations, to respond to a subpoena, search warrant or other lawful request for information we receive, or to otherwise protect our rights.
 

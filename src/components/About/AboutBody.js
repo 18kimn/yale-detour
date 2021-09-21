@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const AboutBody = () => {
   return (
@@ -15,7 +15,7 @@ const AboutBody = () => {
         university’s history through remarkable moments of struggle.
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default AboutBody
+export default AboutBody;

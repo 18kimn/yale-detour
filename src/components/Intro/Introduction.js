@@ -1,23 +1,23 @@
-import React, {useState, useContext} from 'react'
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import './Introduction.css'
-import logo from './logo.svg'
-import GuidedContext from '../../guided-context'
+import React, { useState, useContext } from "react";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import "./Introduction.css";
+import logo from "./logo.svg";
+import GuidedContext from "../../guided-context";
 
 const Introduction = () => {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(true);
   const handleClose = () => {
-    setShow(false)
-    setGuided(false)
-  }
+    setShow(false);
+    setGuided(false);
+  };
 
   // Use the context created by App.js
-  const [guided, setGuided] = useContext(GuidedContext)
+  const [guided, setGuided] = useContext(GuidedContext);
   const handleGuided = () => {
-    setGuided(true)
-    setShow(false)
-  }
+    setGuided(true);
+    setShow(false);
+  };
 
   return (
     <Modal
@@ -57,7 +57,7 @@ const Introduction = () => {
         </Button>
       </Modal.Footer>
     </Modal>
-  )
-}
+  );
+};
 
-export default Introduction
+export default Introduction;

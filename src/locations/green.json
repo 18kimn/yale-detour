@@ -7,15 +7,9 @@
   "simple": "green",
   "status": null,
   "zoom": 17.372117891276627,
-  "center": [
-    -72.9280551271001,
-    41.30847355141913
-  ],
+  "center": [-72.9280551271001, 41.30847355141913],
   "title": "New Haven Green / Phelps Gate",
-  "marker": [
-    -72.927987,
-    41.308345
-  ],
+  "marker": [-72.927987, 41.308345],
   "id": 4,
   "image": "/images/green.jpg",
   "image_credit": "Nancy Kennedy / Getty Images"

@@ -1,29 +1,29 @@
-import React, {useContext} from 'react'
-import Button from 'react-bootstrap/Button'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import * as typeformEmbed from '@typeform/embed'
-import About from './About'
-import GuidedContext from '../../guided-context'
-import logo from '../logo.svg'
-import './index.css'
+import React, { useContext } from "react";
+import Button from "react-bootstrap/Button";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import * as typeformEmbed from "@typeform/embed";
+import About from "./About";
+import GuidedContext from "../../guided-context";
+import logo from "../logo.svg";
+import "./index.css";
 
 // Create popup instance of Typeform
 // Note: this could be done inside the component function using useRef()
 const typeform = typeformEmbed.makePopup(
-  'https://cdbentley.typeform.com/to/fgEAT2ps',
+  "https://cdbentley.typeform.com/to/fgEAT2ps",
   {
-    mode: 'popup',
+    mode: "popup",
     openValue: 30,
     autoClose: 3,
     autoOpen: false,
     hideScrollbars: true,
-  },
-)
+  }
+);
 
 function SiteNav() {
   // Get context for right sidebar (varies depending on Explore or Guided Tour selection)
-  const [guided, setGuided] = useContext(GuidedContext)
+  const [guided, setGuided] = useContext(GuidedContext);
   return (
     <Navbar bg="light" expand="lg" className="fixed-top">
       <Navbar.Brand href="/" className="brandName">
@@ -33,7 +33,7 @@ function SiteNav() {
           width="46"
           height="46"
           alt="Critical History Map logo"
-        />{' '}
+        />{" "}
         Critical History Map
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-nav" />
@@ -51,11 +51,11 @@ function SiteNav() {
             variant="outline-secondary"
             onClick={guided ? () => setGuided(false) : () => setGuided(true)}
           >
-            {guided ? 'Explore' : 'Guided Tour'}
+            {guided ? "Explore" : "Guided Tour"}
           </Button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-  )
+  );
 }
-export default SiteNav
+export default SiteNav;
