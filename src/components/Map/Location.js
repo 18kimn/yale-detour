@@ -43,7 +43,10 @@ const Location = ({location}) => {
           </div>
         </div>
         <div className="mr-5 ml-5 mt-4 carousel-text">
-          <ReactMarkdown children={text} />
+          <ReactMarkdown
+            children={text}
+            components={{link: LinkRenderer}}
+          />
         </div>
       </div>
     </Carousel.Item>

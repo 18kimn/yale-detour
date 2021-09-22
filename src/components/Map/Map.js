@@ -8,12 +8,9 @@ import Carousel from 'react-bootstrap/Carousel'
 import GuidedContext from '../guided-context'
 import ExploreSidebar from '../Sidebar'
 import Location from './Location'
+import matter from 'gray-matter'
 
-// Get locationData from combination of all JSON files in location folder
 const importAll = (r) => r.keys().map(r)
-const locationData = importAll(
-  require.context('../../locations', false, /\.json$/),
-)
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_KEY
 
@@ -30,9 +27,26 @@ const Map = () => {
 
   // Get state for carousel (used in guided mode)
   const [index, setIndex] = useState(0)
-
+  const [locationData, setLocationData] = useState([])
   const mapContainerRef = useRef(null)
   const map = useRef()
+
+  useEffect(() => {
+    const fetchMd = async () => {
+      const files = importAll(
+        require.context('../../locations', false, /\.md$/),
+      )
+      const promises = files.map((file) =>
+        fetch(file)
+          .then((res) => res.text())
+          .then((text) => matter(text))
+          .then((obj) => ({...obj.data, text: obj.content})),
+      )
+      const result = await Promise.all(promises)
+      setLocationData(result)
+    }
+    fetchMd()
+  }, [])
 
   // Initialize map when component mounts
   useEffect(() => {
@@ -67,7 +81,7 @@ const Map = () => {
 
     // Clean up on dismount
     return () => map.current.remove()
-  }, [setGuided]) // [] in useEffect mimics componentDidMount(); (will run only once)
+  }, [setGuided, locationData]) // [] in useEffect mimics componentDidMount(); (will run only once)
 
   // Function to update carousel state (used in guided mode)
   const handleSelect = (selectedIndex) => setIndex(selectedIndex)
@@ -84,7 +98,7 @@ const Map = () => {
         location={{...location, index: i, currentIndex: index}}
       />
     ))
-  console.log(locationComponents)
+
   // Hook: guided or carousel changes, fly map to the overview position
   useEffect(() => {
     // Fly to overview position
@@ -100,7 +114,7 @@ const Map = () => {
       )
       map.current.easeTo({...newLocation, zoom: 17.3, speed: 1})
     }
-  }, [guided, index])
+  }, [guided, index, locationData])
 
   return (
     <Container fluid className="h-100 overflow-hidden">
