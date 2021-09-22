@@ -32,16 +32,16 @@ const Introduction = () => {
           src={logo}
           width="100"
           height="100"
-          alt="Critical History Map logo"
+          alt="The Yale Detour logo"
         />
       </Modal.Header>
       <Modal.Body className="text-center pl-5 pr-5 introduction-text">
-        <h1 className="pt-1 pb-2">Critical History Map</h1>
+        <h1 className="pt-1 pb-2">The Yale Detour</h1>
         <p>
           Yale University’s namesake is Elihu Yale, a slave trader and
           the governor of the British East India Company responsible
-          for over a century of colonial rule in India. This Critical
-          History Map was developed with two ambitions in mind: (1) to
+          for over a century of colonial rule in India. The Yale
+          Detour was developed with two ambitions in mind: (1) to
           think about how Yale’s history as a colonial institution
           remains embedded in its architecture and landscape in the
           present-day and (2) to highlight sites where Yale students

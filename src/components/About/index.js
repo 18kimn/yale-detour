@@ -1,17 +1,13 @@
 import React, {useState} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Nav from 'react-bootstrap/Nav'
-import {useRoutes, usePath, A} from 'hookrouter'
-import routes from '../../router'
 import './index.css'
 
+import Body from './AboutBody'
 const About = () => {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-
-  const routeResult = useRoutes(routes)
-  const path = usePath()
 
   return (
     <>
@@ -32,15 +28,8 @@ const About = () => {
             overflowY: 'auto',
           }}
         >
-          {routeResult}
+          <Body />
         </Modal.Body>
-        <Modal.Footer className="text-center justify-content-center">
-          {path === '/privacy' ? (
-            <A href="/">About</A>
-          ) : (
-            <A href="/privacy">Privacy Policy</A>
-          )}
-        </Modal.Footer>
       </Modal>
     </>
   )

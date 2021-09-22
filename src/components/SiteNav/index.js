@@ -32,9 +32,9 @@ function SiteNav() {
           src={logo}
           width="46"
           height="46"
-          alt="Critical History Map logo"
+          alt="The Yale Detour logo"
         />{' '}
-        Critical History Map
+        The Yale Detour
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-nav" />
       <Navbar.Collapse id="navbar-nav">

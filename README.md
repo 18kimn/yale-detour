@@ -6,19 +6,19 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://ycriticalhistory.org/">
+  <a href="https://yale-detour.org/">
     <img src="public/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Critical History Map</h3>
+  <h3 align="center">The Yale Detour</h3>
 
   <p align="center">
     <!-- project_breadcrumbs -->
-    <a href="https://ycriticalhistory.org/">View Demo</a>
+    <a href="https://yale-detour.org/">View Demo</a>
     ·
-    <a href="https://github.com/collinbentley1/critical-history/issues">Report Bug</a>
+    <a href="https://github.com/18kimn/yale-detour/issues">Report Bug</a>
     ·
-    <a href="https://github.com/collinbentley1/critical-history/issues">Request Feature</a>
+    <a href="https://github.com/18kimn/yale-detour/issues">Request Feature</a>
   </p>
 </p>
 
@@ -58,9 +58,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://ycriticalhistory.org)
+[![Product Name Screen Shot][product-screenshot]](https://yale-detour.org)
 
-This project is adapted from an in-person tour developed by Esul Burton and Janis Jin. Context and state in functional React control a Mapbox visualization, and content is managed on the backend via NetlifyCMS. Typeform captures new locations and questions from site guests. The live project is served by Netlify.
+This project is adapted from an in-person tour developed by Esul Burton and Janis Jin, and a [digital cartography project](https://github.com/collinbentley1/critical-history) begun by Esul, Janis, and Collin Bentley. Context and state in functional React control a Mapbox visualization, and content is managed on the backend via NetlifyCMS. Typeform captures new locations and questions from site guests. The live project is served by Netlify.
 
 The project was developed with two ambitions in mind: (1) to think about how Yale’s history as a colonial institution remains embedded in its architecture and landscape in the present-day and (2) to highlight sites where Yale students and New Haven residents have changed the course of the university’s history through remarkable moments of struggle.
 
@@ -86,9 +86,9 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-1. Clone the critical-history
+1. Clone the yale-detour repository by running the following in a terminal where you'd like to install the project: 
    ```sh
-   git clone https://github.com/collinbentley1/critical-history.git
+   git clone https://github.com/18kimn/yale-detour.git
    ```
 2. Install NPM packages
    ```sh
@@ -98,7 +98,7 @@ To get a local copy up and running follow these simple steps.
     ```sh
     REACT_APP_MAPBOX_API_KEY=REPLACE-WITH-YOUR-KEY
     ```
-4. You must replace `REPLACE-WITH-YOUR-KEY` with a personal Mapbox API key that you can generate by visiting the [Mapbox Access Tokens](https://account.mapbox.com/access-tokens) page or by using the [Mapbox Tokens API](https://docs.mapbox.com/api/accounts/#tokens).
+4. You must replace `REPLACE-WITH-YOUR-KEY` with a key that we can provide for collaborators. You can also use a personal Mapbox API key that you can generate by visiting the [Mapbox Access Tokens](https://account.mapbox.com/access-tokens) page or by using the [Mapbox Tokens API](https://docs.mapbox.com/api/accounts/#tokens).
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -114,13 +114,13 @@ NPM will use `create-react-app` to build a production package or deploy a locall
    npm start
    ```
 
-* Deploy to `ycriticalhistory.org`: Netlify will automatically detect and deploy any changes to the `main` branch. If you'd like to push to your own site, read more about [Netlify build configurations](https://docs.netlify.com/configure-builds/get-started/#basic-build-settings).
+* Deploy to `yale-detour.org`: Netlify will automatically detect and deploy any changes to the `main` branch. If you'd like to push to your own site, read more about [Netlify build configurations](https://docs.netlify.com/configure-builds/get-started/#basic-build-settings).
 
-* The map is styled using a public Mapbox style maintained by the project owners. You can use it `mapbox://styles/collinbentley1/ckd3kwqqw060a1iqgtjne8xs3` or you can create and use your own custom style by updating `Map.js`.
+* The map is styled using a public Mapbox style maintained by the project owners. You can use it by inserting `mapbox://styles/nathanckim18/ckjtewzfv0a1619ob3opmk6c2` into the `style` field of your own Mapbox project, or you can create and use your own custom style by updating `Map.js`.
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/collinbentley1/critical-history/issues) for a list of proposed features (and known issues). There are many opportunities for current students to improve the project or adapt it for other purposes.
+See the [open issues](https://github.com/18kimn/yale-detour/issues) for a list of proposed features (and known issues). There are many opportunities for current students to improve the project or adapt it for other purposes.
 
 
 
@@ -145,42 +145,31 @@ We also welcome content contributions in the form of new locations or updates to
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the Hippocratic License. See `LICENSE` for more information.
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-* Esul Burton - `email@example.com`
-* Janis Jin - `janisjin06@gmail.com`
-* Collin Bentley - `collin.bentley@aya.yale.edu`
+- Nathan Kim (nathan.kim@yale.edu)
 
 ## Links
 
-* Project Link: [https://github.com/collinbentley1/critical-history](https://github.com/collinbentley1/critical-history_name) *(Public)*
+* Project Link: [https://github.com/18kimn/yale-detour](https://github.com/18kimn/yale-detour_name) *(Public)*
 
-* [Project Backend](https://ycriticalhistory.org/admin/index.html) *(Restricted: New users added in Netlify Identity tab)*
+* [Project Backend](https://yale-detour.org/admin/index.html) *(Restricted: New users added in Netlify Identity tab)*
 
 * [Project Feedback Sheet](https://docs.google.com/spreadsheets/d/1RhEaSiJ3xxBW87eJXHrG8N-OppfXLvq9yU8OXR_SuwU/edit?usp=sharing) *(Restricted)*
 
-<!-- ACKNOWLEDGEMENTS
+<!-- ACKNOWLEDGEMENTS  -->
 ## Acknowledgements
 
-* []()
-* []()
-* []() -->
+We'd like to thank Collin Bentley, Esul Burton, and Janis Jin for beginning and carrying out a tremendous amount of work on the Yale Detour. 
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[issues-shield]: https://img.shields.io/github/issues/collinbentley1/critical-history.svg?style=for-the-badge
-[issues-url]: https://github.com/collinbentley1/critical-history/issues
-
-[license-shield]: https://img.shields.io/github/license/collinbentley1/critical-history?style=for-the-badge
-
+[issues-shield]: https://img.shields.io/github/issues/18kimn/yale-detour.svg?style=for-the-badge
+[issues-url]: https://github.com/18kimn/yale-detour/issues
+[license-shield]: https://img.shields.io/github/license/18kimn/yale-detour?style=for-the-badge
 [netlify-shield]: https://img.shields.io/netlify/760047ea-9eef-446f-84c4-8e8364e116e2?logo=netlify&style=for-the-badge
-
 [linkedin-url]: https://linkedin.com/in/collinbentley1
-
 [product-screenshot]: public/images/screenshot.png

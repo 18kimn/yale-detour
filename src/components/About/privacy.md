@@ -2,7 +2,7 @@
 
 This Privacy Policy describes how your personal information is
 collected, used, and shared when you visit or make an account with
-ycriticalhistory.org (the “Site”).
+yale-detour.org (the “Site”).
 
 ## Consent and Information Collection
 
