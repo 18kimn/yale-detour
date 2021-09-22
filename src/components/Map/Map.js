@@ -3,16 +3,16 @@ import mapboxgl from 'mapbox-gl'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Carousel from 'react-bootstrap/Carousel'
 import './Map.css'
-import ReactMarkdown from 'react-markdown'
+import Carousel from 'react-bootstrap/Carousel'
 import GuidedContext from '../guided-context'
 import ExploreSidebar from '../Sidebar'
+import Location from './Location'
 
 // Get locationData from combination of all JSON files in location folder
 const importAll = (r) => r.keys().map(r)
 const locationData = importAll(
-  require.context('./locations', false, /\.json$/),
+  require.context('../../locations', false, /\.json$/),
 )
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_KEY
@@ -39,17 +39,11 @@ const Map = () => {
     map.current = new mapboxgl.Map({
       container: mapContainerRef.current,
       style:
-        'mapbox://styles/collinbentley1/ckd3kwqqw060a1iqgtjne8xs3?optimize=true',
+        'mapbox://styles/nathanckim18/ckjtewzfv0a1619ob3opmk6c2?optimize=true',
       center: [-72.92889674697767, 41.311363185264725],
       zoom: 14.66,
     })
-    // //DEBUG: Logs map location, zoom, and bearing
-    // map.current.on('render', function() {
-    //   console.log(map.current.getBearing(),
-    //               map.current.getZoom(),
-    //               map.current.getCenter(),
-    //               map.current.getPitch());
-    // });
+
     locationData.forEach((marker) => {
       // Create a DOM element for marker
       var el = document.createElement('div')
@@ -76,51 +70,19 @@ const Map = () => {
   }, [setGuided]) // [] in useEffect mimics componentDidMount(); (will run only once)
 
   // Function to update carousel state (used in guided mode)
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex)
-  }
+  const handleSelect = (selectedIndex) => setIndex(selectedIndex)
 
   // TODO: move this to its own component (no losses here, just need to duplicate code for importing the JSON)
   // 2ndTODO: also move the code for importing the JSON to its own component
   // Build components for carousel (when in guided mode)
   const locationComponents = locationData
     .sort((a, b) => {
-      if (a.id < b.id) {
-        return -1
-      }
-      if (a.id > b.id) {
-        return 1
-      }
+      if (a.id < b.id) return -1
+      if (a.id > b.id) return 1
       return 0
     })
-    .map((location) => {
-      return (
-        <Carousel.Item className="mt-2 pl-4 pr-4 text-center">
-          <div className="mr-3 ml-3">
-            <div className="d-flex mb-2 justify-content-center text-center">
-              <h3>{location.title}</h3>
-            </div>
-            <div className="carousel-image mr-5 ml-5">
-              <span class="image-credit">
-                {location.image_credit}
-              </span>
-              <img
-                className="rounded"
-                src={location.image}
-                alt={location.image_alt}
-              />
-            </div>
-            <div className="mr-5 ml-5 mt-4">
-              <ReactMarkdown
-                source={location.text}
-                renderers={{link: LinkRenderer}}
-              />
-            </div>
-          </div>
-        </Carousel.Item>
-      )
-    })
-
+    .map((location, i) => <Location key={i} location={location} />)
+  console.log(index)
   // Carousel hook: updates map when carousel index changes
   useEffect(() => {
     const newLocation = locationData.find(
@@ -133,7 +95,7 @@ const Map = () => {
   // Hook: guided changes, fly map to the overview position
   useEffect(() => {
     // Fly to overview position
-    if (guided === false) {
+    if (!guided) {
       map.current.flyTo({
         center: [-72.92889674697767, 41.311363185264725],
         zoom: 14.66,
@@ -148,15 +110,6 @@ const Map = () => {
       map.current.flyTo(newLocation)
     }
   }, [guided, index])
-
-  // Link renderer: allow links to open in new tab
-  const LinkRenderer = (props) => {
-    return (
-      <a href={props.href} target="_blank" rel="noopener noreferrer">
-        {props.children}
-      </a>
-    )
-  }
 
   return (
     <Container fluid className="h-100 overflow-hidden">

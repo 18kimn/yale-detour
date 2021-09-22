@@ -2,8 +2,8 @@ import React, {useState, useContext} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import './Introduction.css'
-import logo from './logo.svg'
-import GuidedContext from '../../guided-context'
+import logo from '../logo.svg'
+import GuidedContext from '../guided-context'
 
 const Introduction = () => {
   const [show, setShow] = useState(true)

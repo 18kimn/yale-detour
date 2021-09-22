@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Nav from 'react-bootstrap/Nav'
 import {useRoutes, usePath, A} from 'hookrouter'
-import routes from '../router'
+import routes from '../../router'
 import './index.css'
 
 const About = () => {
