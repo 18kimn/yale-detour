@@ -60,7 +60,7 @@ const Map = () => {
       )
       // Add marker to the map
       new mapboxgl.Marker(el)
-        .setLngLat(marker.marker)
+        .setLngLat(marker.center)
         .setPopup(popup)
         .addTo(map.current)
     })
@@ -82,32 +82,21 @@ const Map = () => {
       return 0
     })
     .map((location, i) => <Location key={i} location={location} />)
-  console.log(index)
-  // Carousel hook: updates map when carousel index changes
-  useEffect(() => {
-    const newLocation = locationData.find(
-      (location) => location.id === index,
-    )
-    // Fly to new location
-    map.current.flyTo(newLocation)
-  }, [index])
 
-  // Hook: guided changes, fly map to the overview position
+  // Hook: guided or carousel changes, fly map to the overview position
   useEffect(() => {
     // Fly to overview position
     if (!guided) {
-      map.current.flyTo({
+      map.current.easeTo({
         center: [-72.92889674697767, 41.311363185264725],
         zoom: 14.66,
-        pitch: 0,
-        bearing: 0,
-        speed: 0.3,
+        speed: 1,
       })
     } else {
       const newLocation = locationData.find(
         (location) => location.id === index,
       )
-      map.current.flyTo(newLocation)
+      map.current.easeTo({...newLocation, zoom: 17.3, speed: 1})
     }
   }, [guided, index])
 
