@@ -13,23 +13,37 @@ const LinkRenderer = (props) => {
 }
 
 const Location = ({location}) => {
-  const {title, image_credit, image, image_alt, text} = location
+  const {
+    title,
+    image_credit,
+    image,
+    image_alt,
+    text,
+    index,
+    currentIndex,
+  } = location
 
   return (
-    <Carousel.Item className="mt-2 pl-4 pr-4 text-center">
-      <div className="mr-3 ml-3">
-        <div className="d-flex mb-2 justify-content-center text-center">
+    <Carousel.Item
+      className="mt-2 pl-4 pr-4 text-center"
+      style={{display: index === currentIndex ? 'unset' : 'none'}}
+    >
+      <div className="carousel-container mr-3 ml-3">
+        <div className="carousel-title d-flex mb-2 justify-content-center text-center">
           <h3>{title}</h3>
         </div>
-        <div className="carousel-image mr-5 ml-5">
-          <span className="image-credit">{image_credit}</span>
-          <img className="rounded" src={image} alt={image_alt} />
+        <div style={{display: 'flex', placeContent: 'center'}}>
+          <div className="carousel-image-container mr-5 ml-5">
+            <span className="image-credit">{image_credit}</span>
+            <img
+              className="carousel-image rounded"
+              src={image}
+              alt={image_alt}
+            />
+          </div>
         </div>
-        <div className="mr-5 ml-5 mt-4">
-          <ReactMarkdown
-            source={text}
-            renderers={{link: LinkRenderer}}
-          />
+        <div className="mr-5 ml-5 mt-4 carousel-text">
+          <ReactMarkdown children={text} />
         </div>
       </div>
     </Carousel.Item>

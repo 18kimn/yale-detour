@@ -15,6 +15,7 @@
 }
 
 .carousel-inner {
+  height: 100%;
   max-height: calc(100vh - 108px);
   overflow-y: scroll;
   scrollbar-width: none;
@@ -83,13 +84,36 @@ img {
   margin: 0 auto;
 }
 
-.carousel-image {
-  overflow: hidden;
-  position: relative;
-  padding-top: 0.7em;
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 100px);
 }
 
-.carousel-image .image-credit {
+.carousel-title {
+  height: 10%;
+}
+
+.carousel-image-container {
+  position: relative;
+  padding-top: 0.7em;
+  height: 40vh;
+  width: fit-content;
+}
+
+.carousel-image {
+  display: block;
+}
+.carousel-text {
+  height: 40%;
+  overflow-y: scroll;
+}
+
+.slide {
+  width: 100%;
+}
+
+.carousel-image-container .image-credit {
   position: absolute;
   right: 0px;
   bottom: 0px;

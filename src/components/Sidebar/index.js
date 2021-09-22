@@ -7,7 +7,7 @@ const Sidebar = () => {
       <div className="d-flex justify-content-center pb-4">
         <img
           className="sidebar-marker"
-          src="/images/marker.png"
+          src="images/marker.png"
           width="40"
           height="40"
           alt="Map marker"

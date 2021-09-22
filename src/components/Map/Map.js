@@ -72,17 +72,19 @@ const Map = () => {
   // Function to update carousel state (used in guided mode)
   const handleSelect = (selectedIndex) => setIndex(selectedIndex)
 
-  // TODO: move this to its own component (no losses here, just need to duplicate code for importing the JSON)
-  // 2ndTODO: also move the code for importing the JSON to its own component
-  // Build components for carousel (when in guided mode)
   const locationComponents = locationData
     .sort((a, b) => {
       if (a.id < b.id) return -1
       if (a.id > b.id) return 1
       return 0
     })
-    .map((location, i) => <Location key={i} location={location} />)
-
+    .map((location, i) => (
+      <Location
+        key={i}
+        location={{...location, index: i, currentIndex: index}}
+      />
+    ))
+  console.log(locationComponents)
   // Hook: guided or carousel changes, fly map to the overview position
   useEffect(() => {
     // Fly to overview position
