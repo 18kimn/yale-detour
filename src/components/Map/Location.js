@@ -23,7 +23,7 @@ const Location = ({location}) => {
     >
       <div className="carousel-container mr-3 ml-3">
         <div className="carousel-title d-flex justify-content-center text-center">
-          <h3>{title}</h3>
+          <h3 style={{fontWeight: 'bold'}}>{title}</h3>
         </div>
         <div className="mr-5 ml-5 mt-1 text">
           <ReactMarkdown

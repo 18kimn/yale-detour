@@ -9,6 +9,7 @@ body,
 }
 
 body {
+  overflow: hidden;
   margin: 0;
   font-family: 'Zilla Slab', sans-serif;
   -webkit-font-smoothing: antialiased;
