@@ -1,7 +1,6 @@
-.brandName {
+.brandName, a, button {
   color: black;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-family: 'Zilla Slab', sans-serif;
 }
 
 .brandName a:link {
