@@ -2,11 +2,14 @@
 title: New Haven Green / Phelps Gate
 simple: green
 id: 4
-image: /images/green.jpg
-image_alt: null
 center: [-72.9280551271001, 41.30847355141913]
-image_credit: Nancy Kennedy / Getty Images
 ---
+
+<div class="container">
+  <img src="/images/green.jpg"/>
+  <span class="image-credit">Nancy Kennedy / Getty Images</span>
+</div>
+
 
 College Street functions as an unofficial border between Yale's campus
 and New Haven. Though Yale is obviously located within New Haven,

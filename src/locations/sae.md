@@ -2,9 +2,6 @@
 title: SAE Fraternity
 simple: sae
 id: 6
-image: /images/sae.jpg
-image_alt: null
-image_credit: Ken Yanagisawa / YDN
 center: [-72.93071060824661, 41.3072269598124]
 ---
 
@@ -15,3 +12,9 @@ during which members of the fraternity stood outside the door chanting
 party was one of several incidents in the fall of 2015 that culminated
 in a widespread student movement against institutional racism at Yale.
 (See: Grace Hopper, Cross Campus)
+
+
+<div class="container">
+  <img src="/images/sae.jpg"/>
+  <span class="image-credit">Ken Yanagisawa / YDN</span>
+</div>

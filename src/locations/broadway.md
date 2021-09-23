@@ -2,20 +2,21 @@
 title: Broadway (The Shops at Yale)
 simple: broadway
 id: 1
-image: /images/broadway.jpg
-image_alt: null
-image_credit: Shutterstock
-lon: -72.93005897478628
-lat: 41.31140479609209
 center: [-72.93005897478628, 41.31140479609209]
 ---
+
+<div class="container right">
+  <img src="/images/broadway.jpg"/>
+  <span class="image-credit">Shutterstock</span>
+</div>
+
 
 The Broadway you see now, lined with high-end, name brand retail
 shops, is a result of Yale's Broadway Redevelopment Plan. Citing
 dirty, unsafe streets and outdated stores unsuited for its students,
 Yale started buying up the existing, locally-owned properties on
 Broadway in 1997. Today, Yale carefully manages the entire street
-under \"The Shops at Yale,\" which also includes stores on Chapel
+under "The Shops at Yale," which also includes stores on Chapel
 Street. Even though Yale owns all of this real estate in New Haven,
 they do not pay taxes on most of their properties because of a
 Connecticut law that exempts most educational institutions from having

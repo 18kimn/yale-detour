@@ -11,6 +11,7 @@
     "react-bootstrap": "^1.6.3",
     "react-dom": "^17.0.2",
     "react-markdown": "^7.0.1",
+    "rehype-raw": "^6.1.0",
     "webfontloader": "^1.6.28"
   },
   "scripts": {
@@ -34,6 +35,7 @@
     ]
   },
   "devDependencies": {
+    "babel-loader": "8.1.0",
     "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.1.8",
     "react-scripts": "3",

@@ -81,7 +81,7 @@ const Map = () => {
 
     // Clean up on dismount
     return () => map.current.remove()
-  }, [setGuided, locationData]) // [] in useEffect mimics componentDidMount(); (will run only once)
+  }, [setGuided, locationData])
 
   // Function to update carousel state (used in guided mode)
   const handleSelect = (selectedIndex) => setIndex(selectedIndex)

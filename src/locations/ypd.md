@@ -2,11 +2,13 @@
 title: Yale Police Department
 simple: ypd
 id: 8
-image: /images/ypd.jpg
-image_alt: null
-image_credit: Christian Abraham / Hearst CT Media
 center: [-72.9286395105106, 41.31587850147989]
 ---
+
+<div class="container">
+  <img src="/images/ypd.jpg"/>
+  <span class="image-credit">Christian Abraham / Hearst CT Media</span>
+</div>
 
 In April of 2019, Hamden police officer Devin Eaton and Yale police
 officer Terrance Pollack shot twelve bullets at Stephanie Washington

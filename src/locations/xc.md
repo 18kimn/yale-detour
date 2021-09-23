@@ -2,11 +2,9 @@
 title: Cross Campus
 simple: xc
 id: 7
-image: /images/xc.jpg
-image_alt: null
-image_credit: Alex Zhang / YDN
 center: [-72.9274829694881, 41.310588554014174]
 ---
+
 
 On November 10, 2015, students of color and their allies under the
 umbrella name "Next Yale" held the March of Resilience, which
@@ -25,11 +23,16 @@ departmental status. The students in Next Yale also explicitly linked
 [their demands](https://downatyale.com/nextyale-demands-for-the-administration/)
 to demands made by Black students at Yale in the 1960s, evincing the
 clear connections between different decades of Yale students of
-color.\n\n \nA few of their demands were met; one of the new colleges
-was named after Pauli Murray, a Black genderqueer activist and
-promiment civil rights lawyer.
+color. 
 
-However, most were not. Ethnicity, Race, & Migration continued to
+<div class="container">
+  <img src="/images/xc.jpg"/>
+  <span class="image-credit">Alex Zhang / YDN</span>
+</div>
+
+A few of their demands were met; one of the new colleges
+was named after Pauli Murray, a Black genderqueer activist and
+promiment civil rights lawyer. However, most were not. Ethnicity, Race, & Migration continued to
 struggle with hiring and retaining faculty, and in March 2019, all 13
 tenured faculty members publicly withdrew their labor from the program
 in protest of unsustainable conditions. A student group called the
