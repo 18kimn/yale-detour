@@ -1,5 +1,5 @@
-.modal-100w {
-  max-width: 35%;
+.modal-dialog {
+  max-width: 50%;
 }
 
 .modal-backdrop.show {
@@ -9,4 +9,4 @@
 .introduction-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-}
+} 

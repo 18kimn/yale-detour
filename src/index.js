@@ -1,10 +1,9 @@
+import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import WebFont from 'webfontloader'
 import Home from './components/Home'
-
-import './index.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 WebFont.load({
   google: {

@@ -136,3 +136,7 @@ img {
   justify-content: center;
   align-items: center;
 }
+
+.carousel-indicators li {
+  width: 20px;
+}
