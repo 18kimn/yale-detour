@@ -2,7 +2,7 @@ import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import ReactMarkdown from 'react-markdown'
 import './Map.css'
-
+import rehypeRaw from 'rehype-raw'
 // Link renderer: allow links to open in new tab
 const LinkRenderer = (props) => {
   return (
@@ -32,7 +32,7 @@ const Location = ({location}) => {
         <div className="carousel-title d-flex mb-2 justify-content-center text-center">
           <h3>{title}</h3>
         </div>
-        <div style={{display: 'flex', placeContent: 'center'}}>
+        {/* <div style={{display: 'flex', placeContent: 'center'}}>
           <div className="carousel-image-container mr-5 ml-5">
             <span className="image-credit">{image_credit}</span>
             <img
@@ -41,9 +41,10 @@ const Location = ({location}) => {
               alt={image_alt}
             />
           </div>
-        </div>
+        </div> */}
         <div className="mr-5 ml-5 mt-4 carousel-text">
           <ReactMarkdown
+            rehypePlugins={[rehypeRaw]}
             children={text}
             components={{link: LinkRenderer}}
           />

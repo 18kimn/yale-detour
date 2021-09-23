@@ -2,14 +2,15 @@
 title: The House
 simple: house
 id: 2
-image: /images/house.jpg
+image: null
 image_alt: null
-image_credit: Irene Jiang / YDN
 center: [-72.9329127653582, 41.30944976850142]
 ---
 
+<img src="/images/house.jpg" />
+
 The Afro American Cultural Center, colloquially known as
-[\"The House,\"](https://afam.yalecollege.yale.edu/about-house/history)
+["The House,"](https://afam.yalecollege.yale.edu/about-house/history)
 is the first of the four cultural centers we have here at Yale.
 Established in 1969 as \"Afro-America,\" the House was born out of the
 efforts of the Black Students Alliance at Yale (BSAY). After the House

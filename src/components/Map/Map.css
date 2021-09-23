@@ -8,8 +8,13 @@
   cursor: pointer;
 }
 
+.mapboxgl-ctrl-attrib {
+  background: none;
+}
+
 .mapboxgl-popup-content {
   font-family: 'Zilla Slab', sans-serif;
+  -webkit-font-smoothing: antialiased;
   color: black;
   padding: 0.8rem;
 }
@@ -17,7 +22,7 @@
 .carousel-inner {
   height: 100%;
   max-height: calc(100vh - 108px);
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: none;
 }
 
@@ -58,8 +63,10 @@
 }
 
 img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 50%;
+  max-height: 50%;
+  float: left;
+  margin: 10px;
 }
 
 .carousel-control-prev-icon {
@@ -106,7 +113,7 @@ img {
 }
 .carousel-text {
   height: 40%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .slide {

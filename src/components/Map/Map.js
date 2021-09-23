@@ -117,14 +117,18 @@ const Map = () => {
   }, [guided, index, locationData])
 
   return (
-    <Container fluid className="h-100 overflow-hidden">
+    <Container
+      fluid
+      className="h-100 overflow-hidden"
+      style={{padding: 0}}
+    >
       <Row className="h-100">
-        <Col xs lg="7" className="bg-gray text-white mt-5 pt-4 pl-0">
+        <Col xs lg="7" className="bg-gray text-white">
           <div className="map-wrapper">
             <div ref={mapContainerRef} className="map" />
           </div>
         </Col>
-        <Col xs lg="5" className="mt-5 pt-4">
+        <Col xs lg="5">
           <div className="h-100 d-flex flex-column">
             <Row className="h-100 justify-content-center bg-light">
               {guided ? (
