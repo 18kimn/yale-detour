@@ -1,6 +1,5 @@
 ---
 title: Grace Hopper
-simple: hopper
 id: 5
 center: [-72.9271882686457, 41.31003332154904]
 ---
@@ -9,7 +8,6 @@ center: [-72.9271882686457, 41.31003332154904]
   <img src="/images/hopper.jpg"/>
   <span class="image-credit">Surbhi Bharadwaj / YDN</span>
 </div>
-
 
 Above the entrance to the college office is an etching of Grace Hopper
 College's former namesake, John C. Calhoun. Calhoun was a Yale alum
@@ -28,11 +26,12 @@ hall worker named Corey Menafee used a broomstick to smash a stained
 glass window inside the Calhoun dining hall that depicted two slaves
 carrying bales of cotton. In
 [an interview](https://www.democracynow.org/2016/7/15/exclusive_meet_yale_dishwasher_corey_menafee),
-Menafee explained why he smashed the window, saying, "something inside
-me said, you know, that thing has to come down...as soon as you look
-at it, it just hurts. You feel it in your heart, like, oh, man… we
-shouldn't have to be subjected to those primitive and degrading
-images."
+Menafee explained why he smashed the window, saying:
+
+> Something inside me said, you know, that thing has to come down...as
+> soon as you look at it, it just hurts. You feel it in your heart,
+> like, oh, man… we shouldn't have to be subjected to those primitive
+> and degrading images.
 
 Yale pressured Menafee to resign and pressed charges against him for
 destruction of property. In the weeks following, the story made

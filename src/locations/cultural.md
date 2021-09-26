@@ -1,6 +1,5 @@
 ---
 title: AACC, La Casa Cultural, NACC
-simple: cultural
 id: 3
 center: [-72.93152025944596, 41.30704189027759]
 ---

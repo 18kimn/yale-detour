@@ -1,6 +1,5 @@
 ---
 title: Yale University Art Gallery
-simple: yuag
 id: 10
 author: Mia Coates
 center: [-72.93097, 41.30837]

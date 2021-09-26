@@ -1,6 +1,5 @@
 ---
 title: Pauli Murray College
-simple: murray
 id: 12
 author: Juma Sei and Sasha Lee
 center: [-72.92534, 41.31577]

@@ -21,11 +21,11 @@ const typeform = typeformEmbed.makePopup(
   },
 )
 
-function SiteNav() {
+const SiteNav = () => {
   // Get context for right sidebar (varies depending on Explore or Guided Tour selection)
   const [guided, setGuided] = useContext(GuidedContext)
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg">
       <Navbar.Brand href="/" className="brandName">
         <img
           className="mr-3"

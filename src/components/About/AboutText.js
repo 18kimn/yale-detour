@@ -2,7 +2,15 @@ import React from 'react'
 
 const AboutText = () => {
   return (
-    <>
+    <div class="aboutText">
+      <blockquote>
+        Yale is committed to improving the world today and for future
+        generations through outstanding research and scholarship,
+        education, preservation, and practice.
+      </blockquote>
+      <cite>&mdash; Yale University Mission Statement</cite>
+      <br />
+      <div class='textContainer'>
       <p>
         Empire is everywhere at Yale. From benefactor-named buildings
         to exclusive library access to Old Campus’ towering oak trees,
@@ -48,7 +56,8 @@ const AboutText = () => {
         excavations within its stronghold. Each site in the “DeTour”
         initiates that excavation.
       </p>
-    </>
+      </div>
+    </div>
   )
 }
 

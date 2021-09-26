@@ -1,6 +1,5 @@
 ---
 title: Cross Campus
-simple: xc
 id: 7
 center: [-72.9274829694881, 41.310588554014174]
 ---

@@ -1,6 +1,5 @@
 ---
 title: Yale Police Department
-simple: ypd
 id: 8
 center: [-72.9286395105106, 41.31587850147989]
 ---

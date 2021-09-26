@@ -1,19 +1,20 @@
 ---
-title: Dwight Hall
-simple: dwight
+title: Yale Law School
 id: 11
 author: Blanca Tallaj and Natalie Troy
 center: [-72.92860, 41.31191]
 ---
 
-> Mission: “Located in New Haven, Connecticut, Yale Law School is one
+> Located in New Haven, Connecticut, Yale Law School is one
 > of the world’s premier law schools. It offers an unmatched
 > environment of excellence and educational intimacy in the form of
 > world renowned faculty, small classes, limitless opportunities for
 > clinical training, and strong encouragement of public service. The
 > Law School is small by design; its impact on the world is measured
 > by its accomplished graduates and its ongoing scholarship and
-> outreach through numerous centers and projects.”
+> outreach through numerous centers and projects.
+>
+> &mdash; <cite>Yale Law School mission statement</cite>
 
 Founded in part by a New Haven lawyer who led the committee that
 successfully opposed a proposed academy in New Haven for freedmen, the

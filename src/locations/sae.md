@@ -1,6 +1,5 @@
 ---
 title: SAE Fraternity
-simple: sae
 id: 6
 center: [-72.93071060824661, 41.3072269598124]
 ---

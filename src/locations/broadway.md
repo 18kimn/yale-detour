@@ -1,23 +1,23 @@
 ---
 title: Broadway (The Shops at Yale)
-simple: broadway
 id: 1
 center: [-72.93005897478628, 41.31140479609209]
 ---
 
-<div class="container right">
-  <img src="/images/broadway.jpg"/>
-  <span class="image-credit">Shutterstock</span>
-</div>
-
-> "Yale University Properties manages Yale University’s commercial
+> Yale University Properties manages Yale University’s commercial
 > properties, including retail stores, office spaces, and residential
 > units, in New Haven. Enabled by Yale’s community investment program,
 > we are committed to enhancing the quality of life in New Haven
 > through the development of high quality retail and office
-> environments and the revitalization of surrounding neighborhoods."
+> environments and the revitalization of surrounding neighborhoods.
+>
 > &mdash; <cite> description of Yale University Properties from the
 > Office of New Haven Affairs </cite>
+
+<div class="container">
+  <img src="/images/broadway.jpg"/>
+  <span class="image-credit">Shutterstock</span>
+</div>
 
 The Broadway you see now, lined with high-end, name brand retail
 shops, is a result of Yale's Broadway Redevelopment Plan. Citing
@@ -42,19 +42,14 @@ of Old Campus. The presence of these stores is not organic: New Haven
 is a mid-sized city with the second-highest poverty rate in
 Connecticut.
 
-We can thank University
-
-Properties (UP) for this “high- quality retail”: UP has managed
-
-Yale’s commercial properties, including most retail spaces on Broadway
-and Chapel Street. Their purported goal is to “strengthen
-
-New Haven’s reputation as a first- choice shopping destination.”
-
-Despite this (theoretically) noble goal, Yale has left desirable
-retail spaces vacant, introduced national chains, and massively
-increased rent. In light of this, how genuine can Yale’s commitment to
-New Haven really be?
+We can thank University Properties (UP) for this “high- quality
+retail”: UP has managed Yale’s commercial properties, including most
+retail spaces on Broadway and Chapel Street. Their purported goal is
+to “strengthen New Haven’s reputation as a first- choice shopping
+destination.” Despite this (theoretically) noble goal, Yale has left
+desirable retail spaces vacant, introduced national chains, and
+massively increased rent. In light of this, how genuine can Yale’s
+commitment to New Haven really be?
 
 Yale began purchasing pieces of New Haven during the 1950’s. It first
 bought properties without an obvious intention, with a few notable
@@ -66,10 +61,12 @@ dollars beautifying Broadway, College, and Chapel Streets. It did so
 through maintenance (e.g. rebuilding sidewalks) and the construction
 of new buildings.
 
-"Yale University Properties was established in 1996 as part of Yale’s
-Office of New Haven Affairs which institutionalized the University’s
-commitment to the city of New Haven." - description of Yale University
-Properties from the Office of New Haven Affairs
+> Yale University Properties was established in 1996 as part of Yale’s
+> Office of New Haven Affairs, which institutionalized the University’s
+> commitment to the city of New Haven.
+>
+> &mdash; <cite> description of Yale University Properties from the
+> Office of New Haven Affairs </cite>
 
 This approach excludes local businesses. National retailers can afford
 exorbitant rent, while small, locally owned stores cannot afford it.

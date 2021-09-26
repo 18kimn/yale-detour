@@ -6,6 +6,8 @@
   height: 10%;
 }
 
+/* elements used for alignment and styling the markdown text */ 
+
 .location .container {
   display: flex;
   flex-direction: column;
@@ -24,6 +26,12 @@
   width: 50%;
   float: left;
   margin: 10px 20px 10px 0;
+}
+
+.location div.separator {
+  background: #8a5e5e; /* moody red color */
+  height: 0.2rem;
+  margin-bottom:1rem;
 }
 
 

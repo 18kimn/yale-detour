@@ -1,6 +1,5 @@
 ---
 title: Dwight Hall
-simple: dwight
 id: 9
 center: [-72.92930, 41.30894]
 ---
@@ -25,6 +24,9 @@ Understanding the purpose of Dwight Hall’s service work today cannot
 be done without disentangling the history of “Christianization” behind
 its namesake.
 
+<div class='separator'></div>
+
+
 Perhaps the story of Ōpūkahaʻia can offer insight. Ōpūkahaʻia enters a
 point in American history where missionaries, philanthropists, war
 heroes, and educators carefully disguised conquest under a narrative
@@ -40,32 +42,29 @@ starting with the Bible.
 
 Ōpūkahaʻia’s ‘Christianization’ was now a manifestation of justice,
 serving as a model for indigenous schooling in the latter half of the
-nineteenth century.
-
-Ōpūkahaʻia’s story represents the ‘benevolent’ transformation of the
-“savage-born infant to the surroundings of civilization...grow[ing] to
-possess a civilized language and habit.”
+nineteenth century. Ōpūkahaʻia’s story represents the ‘benevolent’
+transformation of the “savage-born infant to the surroundings of
+civilization...grow[ing] to possess a civilized language and habit.”
 
 Dwight Hall students used their founding of the organization to
-institutionalize missionary work within the City of New Haven.
+institutionalize missionary work within the City of New Haven. For
+instance, within its first twenty years, Dwight Hall launched a “Hope
+Mission” project that “reach[ed] out to homeless and alcoholic men."
+Described as “a modern rescue, ” the Hope Mission project “gave men a
+chance to understand... why so many of them became gangsters.” Not
+unlike Timothy Dwight’s act of benevolence, Dwight Hall’s enactment of
+“service” and “justice” until the 1960s illustrates a veiling of
+conquest as a reduction of chaos and creation of peace.
 
-For instance, within its first twenty years, Dwight Hall launched a
-“Hope Mission” project that “reach[ed] out to homeless and alcoholic
-men." Described as “a modern rescue, ” the Hope Mission project “gave
-men a chance to understand... why so many of them became gangsters.”
-Not unlike Timothy Dwight’s act of benevolence, Dwight Hall’s
-enactment of “service” and “justice” until the 1960s illustrates a
-veiling of conquest as a reduction of chaos and creation of peace.
+<div class='separator'></div>
 
 It was not until the height of the Civil Rights Movement that Dwight
 Hall transitioned to “welcom[ing] socially minded activists of any
 faith or non- faith.” Dwight Hall’s programming continued to reanimate
-its colonial past.
-
-Pivots to secular service at the Hall undergird the university’s
-negligence to New Haven; administrators point to the presence of
-service across the city as Yale’s ‘investments’ in the community,
-forgoing its larger material debt to the city.
+its colonial past. Pivots to secular service at the Hall undergird the
+university’s negligence to New Haven; administrators point to the
+presence of service across the city as Yale’s ‘investments’ in the
+community, forgoing its larger material debt to the city.
 
 Today, Dwight Hall continues to tout its position through selective
 callings of its history, such as its participation in housing
@@ -83,10 +82,10 @@ Yale’s will. Patrick Liu, a student involved in providing clinical
 services at the Yale Law School, refuses to blindly follow the
 institution’s history in his justice work:
 
-“I have personally seen clients that I’ve worked with barely escape a
-devastating encounter with the criminal justice system only to return
-to spaces that are under-resourced, highly policed... Even when we
-provide help, we are setting up our clients to fail.”
+> I have personally seen clients that I’ve worked with barely escape a
+> devastating encounter with the criminal justice system only to
+> return to spaces that are under-resourced, highly policed... Even
+> when we provide help, we are setting up our clients to fail.
 
 His critical confrontation with perverted notions of justice allows
 him to imagine justice beyond the predatory “will-to-help.” In order

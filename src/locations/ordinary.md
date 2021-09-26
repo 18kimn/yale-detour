@@ -1,9 +1,8 @@
 ---
 title: Ordinary Spaces
-simple: ordinary
 id: 13
 author: Amy Kim and Jose Garcia
-center: [0,0]
+center: [-72.928837, 41.30967]
 ---
 
 The final stops are Yale’s ‘ordinary spaces’– common places on campus

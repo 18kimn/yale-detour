@@ -1,6 +1,5 @@
 ---
 title: Stiles
-simple: stiles
 id: 0
 center: [-72.93093037800622, 41.31259267608269]
 ---

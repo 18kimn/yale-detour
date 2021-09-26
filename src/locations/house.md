@@ -1,6 +1,5 @@
 ---
 title: The House
-simple: house
 id: 2
 center: [-72.9329127653582, 41.30944976850142]
 ---

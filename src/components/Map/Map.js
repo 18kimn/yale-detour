@@ -129,14 +129,14 @@ const Map = () => {
       style={{padding: 0}}
     >
       <Row className="h-100">
-        <Col xs lg="7" className="bg-gray text-white">
+        <Col xs lg="7" className="text-white">
           <div className="map-wrapper">
             <div ref={mapContainerRef} className="map" />
           </div>
         </Col>
         <Col xs lg="5">
           <div className="h-100 d-flex flex-column">
-            <Row className="h-100 justify-content-center bg-light">
+            <Row className="h-100 justify-content-center">
               {guided ? (
                 <Carousel
                   activeIndex={index}
