@@ -38,6 +38,10 @@ colonial legacy by positioning itself as the objective mediator
 between the public and fine arts and the knowledgeable educator of
 other cultures and communities.
 
+<div class="container left">
+  <img src="/images/yuag/2.png"/>
+</div>
+
 In the recent history of the YUAG there has been increased attention
 paid to the inclusion of Black and Indigenous art through more
 collection building and programming to counteract its ties to colonial
@@ -72,3 +76,8 @@ within and outside of the YUAG that are hoping to change this.
 Thank you to Nyeda Regina Stewart and Molleen Theodore for sharing
 your perspectives on the YUAG with me. Our discussions were essential
 to my thinking.
+
+
+<div class="container">
+  <img src="/images/yuag/1.png"/>
+</div>

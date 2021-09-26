@@ -38,6 +38,10 @@ of adjudication and punishment, famous legal figures from cultures
 around the world (ranging from King Solomon and Confucius to
 Charlemagne), and famous legal scholars” ring its massive stone walls.
 
+<div class="container">
+  <img src="/images/yls/1.png"/>
+</div>
+
 The website’s subtle use of the phrase “famous legal scholars” implies
 a homogenization of law and justice, as if this building and everyone
 who has ever passed through it are the final authority on law in the
@@ -49,6 +53,10 @@ its old buildings as well as one new one reveal how central the
 school’s architecture is to continuing its status. For the YLS, those
 who threaten others’ property are the faces of criminality, carved
 into the schools’ very walls.
+
+<div class="container right">
+  <img src="/images/yls/2.png"/>
+</div>
 
 Just like its eye-catching architecture and pipeline of obedient past
 graduates into powerful positions, the law school also makes academic
@@ -62,6 +70,10 @@ American Excellence, Stephens and Kronman ring similar reactionary
 alarm bells about how introducing “emotions” and “safe spaces” into
 the university to coddle non-White students threatens the
 intellectualness of the university.
+
+<div class="container left">
+  <img src="/images/yls/4.png"/>
+</div>
 
 The title of Bret Stephens’ 2019 New York Times Op- Ed clearly frames
 whose epistemologies are inherently un-excellent: “Diversity,

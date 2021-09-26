@@ -14,6 +14,10 @@ announced the University’s decision in April of 2016, Yale’s famed
 residential college system was already under fire for his re-affirmed
 refusal to rename Calhoun College.
 
+<div class="container left">
+  <img src="/images/murray/1.png"/>
+</div>
+
 A graduate from Yale’s class of 1804, the College’s namesake—John
 Caldwell Calhoun—served as a U.S. senator, the nation’s 7th vice
 president, secretary of state, and secretary of war. The infamous
@@ -32,6 +36,12 @@ country, the as-yet- unnamed construction sites... emerged as a litmus
 test for Yale’s commitment to diversity: would Yale seize this
 opportunity to honor a woman or person of color... or choose another
 dead white man as a college namesake?” Yale would do both.
+
+
+<div class="container right">
+  <img src="/images/murray/3.png"/>
+</div>
+
 
 The first college was named after Benjamin Franklin, a condition
 placed on the $250 million donation gifted to the University from
@@ -81,3 +91,8 @@ Murray with Benjamin Franklin felt like a deflection and a trade-off,
 Still, she insists, “If [Pauli Murray College] becomes a place to use
 the wealth and resources of Yale to the advantage of those that
 already have that, then yeah, we have a problem.”
+
+
+<div class="container">
+  <img src="/images/murray/4.png"/>
+</div>

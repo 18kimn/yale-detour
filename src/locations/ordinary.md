@@ -10,6 +10,11 @@ that we usually don’t think about as intertwined with the
 institution’s imperial legacy. Though taken for granted, these spaces
 are in fact very politically and economically charged.
 
+
+<div class="container right">
+  <img src="/images/ordinary/1.png"/>
+</div>
+
 Yale’s ‘ordinary spaces’ are in service to people its empire renders
 ‘extraordinary.’ When ‘extraordinary’ members of the university (i.e.
 students, professors) enter Yale’s dining halls, convenience stores,
@@ -17,6 +22,7 @@ and even bathrooms, they are made to think of the spaces as nothing
 more or less than ‘in between’ more meaningful destinations. We are
 never supposed to be responsible for these spaces. We use their
 provisions and move forward.
+
 
 Ordinary spaces at Yale are structured in a way that ceaselessly
 shines on its “aspiring leaders.” These “aspiring leaders” only have
@@ -36,6 +42,11 @@ stand out; the standard of excellence becomes the extent to which
 these workers’ labor and personhood are rendered invisible, made into
 shadows.
 
+
+<div class="container left">
+  <img src="/images/ordinary/2.png"/>
+</div>
+
 But shadows are not inherent to empire; empire differentiates light
 and deems certain areas as darkness, erasing the fact that shadows, as
 much as shines, are a product of light. Reorienting and weaponizing
@@ -54,6 +65,11 @@ conceived new possibilities for a relational solidarity. In June of
 2020, Local 35 members led more than 500 vehicles in a pro-union car
 caravan through one of the university’s most transited and common
 spaces: Hillhouse Avenue.
+
+<div class="container">
+  <img src="/images/ordinary/3.png"/>
+</div>
+
 
 Under the mantra “Yale: Respect New Haven,” union members physically
 occupied ordinary space to demand that Yale “support those who have
@@ -102,6 +118,10 @@ to workers across the institution. Even if not a ‘probable’
 proposition for the institution to take up, the movements is to
 recognize that “being is always a being-with, and there is no
 existence outside of a co-existence.”
+
+<div class="container right">
+  <img src="/images/ordinary/4.png"/>
+</div>
 
 Making relational solidarity real begins with these questions and
 acknowledgements, but it does not end there. Take the Student Action

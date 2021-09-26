@@ -15,6 +15,10 @@ but marked his presence within the city of New Haven, where he “helped
 establish an elementary school for Black people, ‘to teach negro
 children how to read the Bible.’”
 
+<div class="container right">
+  <img src="/images/dwight/3.png"/>
+</div>
+
 To Dwight, the white man’s “duty” for justice was to “faithfully”
 Christianize those who were brutally enslaved by the older imperial
 powers like France and Britain. It comes at no surprise that Dwight
@@ -45,6 +49,10 @@ serving as a model for indigenous schooling in the latter half of the
 nineteenth century. Ōpūkahaʻia’s story represents the ‘benevolent’
 transformation of the “savage-born infant to the surroundings of
 civilization...grow[ing] to possess a civilized language and habit.”
+
+<div class="container left">
+  <img src="/images/dwight/6.png"/>
+</div>
 
 Dwight Hall students used their founding of the organization to
 institutionalize missionary work within the City of New Haven. For
@@ -93,3 +101,7 @@ to forge resistance, one must know what is being resisted. Alternative
 relationships between the institution and the city are possible, but
 reaching them necessitates a reckoning with the existing
 relationship(s) of exploitation.
+
+<div class="container">
+  <img src="/images/dwight/2.png"/>
+</div>

@@ -42,6 +42,10 @@ of Old Campus. The presence of these stores is not organic: New Haven
 is a mid-sized city with the second-highest poverty rate in
 Connecticut.
 
+<div class="container left">
+  <img src="/images/broadway/2.png"/>
+</div>
+
 We can thank University Properties (UP) for this “high- quality
 retail”: UP has managed Yale’s commercial properties, including most
 retail spaces on Broadway and Chapel Street. Their purported goal is
@@ -67,6 +71,10 @@ of new buildings.
 >
 > &mdash; <cite> description of Yale University Properties from the
 > Office of New Haven Affairs </cite>
+
+<div class="container">
+  <img src="/images/broadway/4.png"/>
+</div>
 
 This approach excludes local businesses. National retailers can afford
 exorbitant rent, while small, locally owned stores cannot afford it.
@@ -99,6 +107,10 @@ Haven residents. To offer a safe living environment, Yale does not
 need to transform Broadway and Chapel into expensive malls. It does so
 anyways to produce the narrative that New Haven is for white, wealthy
 college students.
+
+<div class="container left">
+  <img src="/images/broadway/5.png"/>
+</div>
 
 It would be a disservice to discuss the Shops at Yale without an
 acknowledge of the racist incident at Good Nature Market. In the wake
