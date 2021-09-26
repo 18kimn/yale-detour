@@ -56,6 +56,7 @@ const Map = () => {
         'mapbox://styles/nathanckim18/ckjtewzfv0a1619ob3opmk6c2?optimize=true',
       center: [-72.92889674697767, 41.311363185264725],
       zoom: 14.66,
+      minZoom: 12,
     })
 
     locationData.forEach((marker) => {
