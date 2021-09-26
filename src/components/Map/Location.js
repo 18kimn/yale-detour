@@ -14,6 +14,7 @@ const LinkRenderer = (props) => {
 }
 
 const Location = ({location}) => {
+  console.log(location)
   const {title, text, index, currentIndex} = location
   const [bg, setBg] = useState()
 
