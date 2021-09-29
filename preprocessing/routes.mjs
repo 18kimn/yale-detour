@@ -14,6 +14,7 @@ dotenv.config()
 // 1. assembles a list of our locations
 // 2. queries the google maps API for routes
 // 3. assembles them into a geojson file and writes to disk
+// run it with `node preprocessing/routes.mjs`
 
 // getLocations() pulls locations data from the markdown files in
 //  1. reads in files
@@ -22,10 +23,10 @@ dotenv.config()
 //    i.e. reverse and as a comma-separated string, so I adjusted that
 const getLocations = async () => {
   const locationsDir = await fs.readdir(
-    path.join(__dirname, '../src/locations'),
+    path.join(__dirname, '../src/locations/guided'),
   )
   const locationsPromises = locationsDir.map((filename) =>
-    fs.readFile(__dirname + '/../src/locations/' + filename, 'utf-8'),
+    fs.readFile(__dirname + '/../src/locations/guided/' + filename, 'utf-8'),
   )
   const result = await Promise.all(locationsPromises)
   const locations = result.map((text) => {
@@ -85,13 +86,14 @@ const main = async () => {
     .slice(0, locations.length - 1)
     .map(async (location, index) => {
       const route = await getRoute(locations, index)
-      const feature = {...featureTemplate}
+      const feature = JSON.parse(JSON.stringify(featureTemplate))
       const coords = route.map(({lng, lat}) => [lng, lat])
-      feature.geometry.coordinates = coords
+      feature.geometry.coordinates = [...coords]
       feature.properties = {
         start: location,
         end: locations[index + 1],
       }
+      console.log(feature.geometry.coordinates)
       return feature
     })
 
