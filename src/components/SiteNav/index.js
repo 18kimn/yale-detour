@@ -59,7 +59,7 @@ const SiteNav = () => {
               guided ? () => setGuided(false) : () => setGuided(true)
             }
           >
-            {guided ? 'Explore' : 'Guided Tour'}
+            {guided ? 'Switch to Explore Mode' : 'Take a Guided Tour'}
           </Button>
         </Nav>
       </Navbar.Collapse>

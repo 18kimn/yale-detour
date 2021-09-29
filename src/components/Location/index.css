@@ -1,9 +1,16 @@
-.carousel-item {
-  overflow: hidden;
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.location .carousel-container {
+  overflow: auto; 
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
 }
 
 .location .title {
   height: 10%;
+  overflow: hidden;
 }
 
 /* elements used for alignment and styling the markdown text */ 

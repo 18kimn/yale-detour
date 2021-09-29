@@ -1,11 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import './Introduction.css'
+import './index.css'
 import logo from '../logo.svg'
 import AboutText from '../About/AboutText'
+import GuidedContext from '../guided-context'
 
 const Introduction = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [_, setGuided] = useContext(GuidedContext)
   const [show, setShow] = useState(true)
   const handleClose = () => {
     setShow(false)
@@ -13,6 +16,7 @@ const Introduction = () => {
 
   // Use the context created by App.js
   const handleGuided = () => {
+    setGuided(true)
     setShow(false)
   }
 

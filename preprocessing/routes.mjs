@@ -90,6 +90,7 @@ const main = async () => {
       const coords = route.map(({lng, lat}) => [lng, lat])
       feature.geometry.coordinates = [...coords]
       feature.properties = {
+        id: locations[index + 1].id,
         start: location,
         end: locations[index + 1],
       }
