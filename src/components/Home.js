@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import SiteNav from './SiteNav'
-import Map from './Map/Map'
-import Introduction from './Intro/Introduction'
+import Map from './Map'
+import Introduction from './Intro'
 import GuidedContext from './guided-context'
 
-function Home() {
+const Home = () => {
   const guided = useState(false)
   // const value = { guided, setGuided };
 

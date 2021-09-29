@@ -21,11 +21,11 @@ const typeform = typeformEmbed.makePopup(
   },
 )
 
-function SiteNav() {
+const SiteNav = () => {
   // Get context for right sidebar (varies depending on Explore or Guided Tour selection)
   const [guided, setGuided] = useContext(GuidedContext)
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg">
       <Navbar.Brand href="/" className="brandName">
         <img
           className="mr-3"
@@ -59,7 +59,7 @@ function SiteNav() {
               guided ? () => setGuided(false) : () => setGuided(true)
             }
           >
-            {guided ? 'Explore' : 'Guided Tour'}
+            {guided ? 'Switch to Explore Mode' : 'Take a Guided Tour'}
           </Button>
         </Nav>
       </Navbar.Collapse>

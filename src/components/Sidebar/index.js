@@ -14,9 +14,9 @@ const Sidebar = () => {
         />
       </div>
       <div className="d-flex justify-content-center">
-        <h3 className="text-center">
+        <h5 className="text-center">
           Select a location on the map to get started.
-        </h3>
+        </h5>
       </div>
     </div>
   )

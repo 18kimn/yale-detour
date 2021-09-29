@@ -5,6 +5,7 @@ body,
 #root,
 .Home,
 .Map {
+  font-size: 13pt;
   height: 100%;
 }
 
@@ -16,8 +17,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+/* bootstrap annoyingly specifies font-family */
+h1, h2, h3, h4, h5, h6, p, blockquote {
   font-family: 'Zilla Slab', sans-serif;
+}
+
+blockquote {
+  border-radius: 3px;
+  border: 1px;
+  padding: 2rem 2rem 1rem 2rem;
+  margin: 2rem 0 1rem 0; 
+  background: #fff1f1;
+  border-left: 5px solid;
 }
 
 code {
@@ -36,18 +47,4 @@ code {
 }
 .bg-red {
   background: rgb(196, 50, 53);
-}
-
-/*.map-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}*/
-
-.map {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  width: 100%;
-  height: 100%;
 }
