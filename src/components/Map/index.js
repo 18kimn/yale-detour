@@ -31,14 +31,22 @@ const Map = () => {
 
   // initialize the map
   useEffect(() => {
+    const bounds = [
+      [-72.9674, 41.28735],
+      [-72.89985, 41.33419],
+    ]
     map.current = new mapboxgl.Map({
       container: mapContainerRef.current,
       style:
         'mapbox://styles/nathanckim18/ckjtewzfv0a1619ob3opmk6c2?optimize=true',
       center: [-72.92889674697767, 41.311363185264725],
       zoom: 14.66,
+      minZoom: 12,
+      maxBounds: bounds,
     })
-    // add our routes onto this map
+
+    // add our local routes onto the map object
+
     map.current.on('load', () => {
       map.current
         .addSource('routes', {type: 'geojson', data: routes})
@@ -51,6 +59,7 @@ const Map = () => {
             'line-opacity': 0.5,
             'line-width': 2,
           },
+          filter: ['==', 'id', -1],
         })
     })
     // remove the map instance when the component unmounts
@@ -60,9 +69,8 @@ const Map = () => {
   // update the set of visible markers whenever the user changes from 'guided' to 'explore'
   useEffect(() => {
     // remove any markers if there are any
-    ;[...document.getElementsByClassName('marker')].forEach((el) =>
-      el.remove(),
-    )
+    const markers = [...document.getElementsByClassName('marker')]
+    markers.forEach((el) => el.remove())
     // create a marker for each location
     locationData.forEach((marker) => {
       var el = document.createElement('div')
