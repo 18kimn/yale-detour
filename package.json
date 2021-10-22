@@ -36,12 +36,16 @@
   },
   "devDependencies": {
     "babel-loader": "8.1.0",
+    "bytes": "^3.1.0",
     "customize-cra": "^1.0.0",
     "decode-google-map-polyline": "^1.0.1",
+    "du": "^1.0.0",
     "https": "^1.0.0",
     "node-fetch": "^3.0.0",
     "react-app-rewired": "^2.1.8",
     "react-scripts": "3",
+    "recursive-readdir": "^2.2.2",
+    "sharp": "^0.29.2",
     "webpack-bundle-analyzer": "^4.4.2"
   }
 }
