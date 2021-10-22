@@ -20,19 +20,24 @@ const updateConsole = (str) => {
 //  could make .jpg files unreasonably blurry
 //  my answer to this is to keep an array of files we already
 //  processed in the file referenced below
-const alreadyProcessed = JSON.parse(
-  await fs.readFile(join(__dirname, 'processedImages.json'), 'utf-8'),
+const alreadyProcessed = await fs
+  .readFile(join(__dirname, 'processedImages.json'))
+  .then((string) => JSON.parse(string))
+  .then((arr) => arr.map((str) => str.replace(process.cwd(), '')))
+const allImages = await readdir(imageDir).then((arr) =>
+  arr.map((str) => str.replace(process.cwd(), '')),
 )
-
-const allImages = await readdir(imageDir)
-const imagePaths = allImages.filter(
+const newPaths = allImages.filter(
   (imagePath) => !alreadyProcessed.includes(imagePath),
 )
+console.log({newPaths, allImages})
 
 fs.writeFile(
   join(__dirname, 'processedImages.json'),
-  JSON.stringify([...allImages, ...imagePaths]),
+  JSON.stringify([...newPaths, ...alreadyProcessed]),
 )
+
+const imagePaths = newPaths.map((str) => process.cwd() + str)
 
 console.log(
   `Image processing beginning, current size is ${bytes(
