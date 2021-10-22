@@ -20,6 +20,8 @@ const updateConsole = (str) => {
 //  could make .jpg files unreasonably blurry
 //  my answer to this is to keep an array of files we already
 //  processed in the file referenced below
+//  this requires removing the process.cwd() string from the file so that it
+//  works on multiple machines
 const alreadyProcessed = await fs
   .readFile(join(__dirname, 'processedImages.json'))
   .then((string) => JSON.parse(string))
@@ -30,7 +32,6 @@ const allImages = await readdir(imageDir).then((arr) =>
 const newPaths = allImages.filter(
   (imagePath) => !alreadyProcessed.includes(imagePath),
 )
-console.log({newPaths, allImages})
 
 fs.writeFile(
   join(__dirname, 'processedImages.json'),
