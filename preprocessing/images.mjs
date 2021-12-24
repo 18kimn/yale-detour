@@ -29,16 +29,14 @@ const alreadyProcessed = await fs
 const allImages = await readdir(imageDir).then((arr) =>
   arr.map((str) => str.replace(process.cwd(), '')),
 )
-const newPaths = allImages.filter(
+const imagePaths = allImages.filter(
   (imagePath) => !alreadyProcessed.includes(imagePath),
 )
 
 fs.writeFile(
   join(__dirname, 'processedImages.json'),
-  JSON.stringify([...newPaths, ...alreadyProcessed]),
+  JSON.stringify([...imagePaths, ...alreadyProcessed]),
 )
-
-const imagePaths = newPaths.map((str) => process.cwd() + str)
 
 console.log(
   `Image processing beginning, current size is ${bytes(
@@ -50,11 +48,11 @@ if (imagePaths.length === 0)
   updateConsole(
     'No files to process D: either files were already optimized or this script broke \n',
   )
-
+console.log(imagePaths)
 let currentIndex = 1
 imagePaths.forEach(async (imagePath) => {
   const imageBuffer = await sharp(imagePath)
-    .resize(1000)
+    .resize(500)
     .jpeg({progressive: true, force: false, quality: 70})
     .png({
       progressive: true,
