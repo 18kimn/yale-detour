@@ -27,8 +27,9 @@ const alreadyProcessed = await fs
   .then((string) => JSON.parse(string))
   .then((arr) => arr.map((str) => str.replace(process.cwd(), '')))
 const allImages = await readdir(imageDir).then((arr) =>
-  arr.map((str) => str.replace(process.cwd(), '')),
+  arr.map((str) => str.replace(imageDir, '')),
 )
+
 const imagePaths = allImages.filter(
   (imagePath) => !alreadyProcessed.includes(imagePath),
 )
@@ -48,10 +49,10 @@ if (imagePaths.length === 0)
   updateConsole(
     'No files to process D: either files were already optimized or this script broke \n',
   )
-console.log(imagePaths)
+
 let currentIndex = 1
 imagePaths.forEach(async (imagePath) => {
-  const imageBuffer = await sharp(imagePath)
+  const imageBuffer = await sharp(join(imageDir, imagePath))
     .resize(500)
     .jpeg({progressive: true, force: false, quality: 70})
     .png({
