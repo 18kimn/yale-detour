@@ -49,13 +49,7 @@
         out:fade={{duration: 200, delay: 0}}
         on:outroend={() => (contentDisplay = true)}
       >
-        <img
-          id="intro-image"
-          src="images/marker.png"
-          width="40"
-          height="40"
-          alt="Map marker"
-        />
+        <div id="intro-image" />
         <Glitch>
           <h2>Select a location on the map to get started.</h2>
         </Glitch>
@@ -109,6 +103,16 @@
     text-align: center;
   }
 
+  #intro-image {
+    -webkit-mask: url(images/marker.svg) no-repeat 50% 50%;
+    mask: url(images/marker.svg) no-repeat 50% 50%;
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    background-color: black;
+    width: 4rem;
+    height: 8rem;
+  }
+
   #content {
     padding-bottom: 1rem;
   }
@@ -122,10 +126,6 @@
 
   #content :global(img) {
     width: 100%;
-  }
-
-  img#intro-image {
-    width: 40px;
   }
 
   #content :global(.image-credit) {

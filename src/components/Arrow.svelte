@@ -31,7 +31,6 @@
     opacity.set(0.1)
   }}
 >
-  <button id="change-location" on:click={() => handleClick()} />
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="#000"
@@ -42,6 +41,7 @@
   >
     <path {d} />
   </svg>
+  <button id="change-location" on:click={() => handleClick()} />
 </div>
 
 <style>

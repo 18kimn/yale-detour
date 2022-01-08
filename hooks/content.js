@@ -12,7 +12,7 @@ const contentDir = resolve('../wiki/locations')
  * into a JS object
  * Doesn't handle tables or anything like that
 */
-function parseYAML(frontmatter){
+export function parseYAML(frontmatter){
   return frontmatter.split('\n').reduce((accum, pair) => {
     if(!pair) return accum
     const [key, value] = pair.split(':').map(item => item.trim())

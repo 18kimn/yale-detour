@@ -1,7 +1,6 @@
 import {join, dirname} from 'path'
 import {promises as fs} from 'fs'
 import decodePolyline from 'decode-google-map-polyline'
-import matter from 'gray-matter'
 import dotenv from 'dotenv'
 import https from 'https'
 import {fileURLToPath} from 'url'
@@ -11,12 +10,10 @@ process.chdir(__dirname)
 dotenv.config({path: '../.env'})
 
 // this file creates a GeoJSON file in src/assets/routes.json of
-//   the routes between locations on the Yale Detour. In brief, it:
-// 1. assembles a list of our locations
-// 2. queries the google maps API for routes
-// 3. assembles them into a geojson file and writes to disk
-// run it with `node preprocessing/routes.mjs`
+//   the routes between locations on the Yale Detour
+// Should be run after content.js, e.g. `pnpm content`
 
+/** Mimics the browser fetch API, in node. */
 async function fetch(url) {
   return new Promise((resolve, reject) => {
     https.get(url, (res) => {
@@ -32,24 +29,16 @@ async function fetch(url) {
   })
 }
 
-// getLocations() pulls locations data from the markdown files in
-//  1. reads in files
-//  2. gets just the metadata with matter().data
-//  3. In those markdown files we have it as [lat, lng] but google maps wants it as `lng,lat`
-//    i.e. reverse and as a comma-separated string, so I adjusted that
+/** Retrieves location data from our content JSON in the public directory
+ * */
 const getLocations = async () => {
-  const locationsDir = join(__dirname, '../wiki/locations')
-  const locationPaths = await fs.readdir(locationsDir)
-  const locationsPromises = locationPaths.map((filename) =>
-    fs.readFile(join(locationsDir, filename), 'utf-8'),
-  )
-  const result = await Promise.all(locationsPromises)
-  const locations = result
-    .map((text) => matter(text).data)
-    .filter((location) => location.guided)
+  const locations = (
+    await fs.readFile('../public/content.json', 'utf-8')
+      .then(text => JSON.parse(text))
+  ).filter((location) => location.data.guided)
     .map((location) => {
-      location.center = location.center.reverse().join(',')
-      return location
+      location.data.center = location.data.center.reverse().join(',')
+      return location.data
     })
 
   return locations
@@ -65,12 +54,13 @@ const featureTemplate = {
   'properties': null,
 }
 
-// getRoute()
-// inputs: the locations data scraped from the markdown files and
-//    the index of the current origin for the route
-//    1. it gets a origin and destination locations, to start and end the route at
-//    2. it constructs a query with template literals
-//    3. it decodes the route returned, which would be in a compressed format
+/** getRoute()
+ inputs: the locations data scraped from the markdown files and
+    the index of the current origin for the route
+    1. it gets a origin and destination locations, to start and end the route at
+    2. it constructs a query with template literals
+    3. it decodes the route returned, which would be in a compressed format
+*/
 const getRoute = async (locations, index) => {
   const origin = locations[index].center
   const destination = locations[index + 1].center
@@ -88,12 +78,13 @@ const getRoute = async (locations, index) => {
   return route
 }
 
-// main(): puts all of the above together in an async() context to execute it
-//    1. gets locations that should be used in the routes (hopper, ypd, xc, etc)
-//    2. Sorts locations so that IDs go from smallest to largest
-//    3. For every location, it constructs a route that begins at this location and ends at
-//        the next location in the locations array
-//    4. Wraps all of these together in a GeoJSON format object and writes it to a file
+/** puts all of the above together in an async() context to execute it
+   1. gets locations that should be used in the routes (hopper, ypd, xc, etc)
+   2. Sorts locations so that IDs go from smallest to largest
+   3. For every location, it constructs a route that begins at this location and ends at
+       the next location in the locations array
+   4. Wraps all of these together in a GeoJSON format object and writes it to a file
+*/
 const main = async () => {
   const locations = await getLocations()
   const featurePromises = locations
