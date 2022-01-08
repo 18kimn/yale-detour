@@ -1,13 +1,14 @@
-import path from 'path'
+import {join, dirname} from 'path'
 import {promises as fs} from 'fs'
 import decodePolyline from 'decode-google-map-polyline'
 import matter from 'gray-matter'
-import fetch from 'node-fetch'
 import dotenv from 'dotenv'
+import https from 'https'
 import {fileURLToPath} from 'url'
 const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-dotenv.config()
+const __dirname = dirname(__filename)
+process.chdir(__dirname)
+dotenv.config({path: '../.env'})
 
 // this file creates a GeoJSON file in src/assets/routes.json of
 //   the routes between locations on the Yale Detour. In brief, it:
@@ -16,25 +17,40 @@ dotenv.config()
 // 3. assembles them into a geojson file and writes to disk
 // run it with `node preprocessing/routes.mjs`
 
+async function fetch(url) {
+  return new Promise((resolve, reject) => {
+    https.get(url, (res) => {
+      if (res.statusCode < 200 || res.statusCode >= 300) {
+        return reject(new Error('statusCode=' + res.statusCode))
+      }
+      let accumulated = ''
+      res.on('data', (data) => {
+        accumulated += data
+      })
+      res.on('end', () => resolve(accumulated))
+    })
+  })
+}
+
 // getLocations() pulls locations data from the markdown files in
 //  1. reads in files
 //  2. gets just the metadata with matter().data
 //  3. In those markdown files we have it as [lat, lng] but google maps wants it as `lng,lat`
 //    i.e. reverse and as a comma-separated string, so I adjusted that
 const getLocations = async () => {
-  const locationsDir = await fs.readdir(
-    path.join(__dirname, '../src/locations/guided'),
-  )
-  const locationsPromises = locationsDir.map((filename) =>
-    fs.readFile(__dirname + '/../src/locations/guided/' + filename, 'utf-8'),
+  const locationsDir = join(__dirname, '../wiki/locations')
+  const locationPaths = await fs.readdir(locationsDir)
+  const locationsPromises = locationPaths.map((filename) =>
+    fs.readFile(join(locationsDir, filename), 'utf-8'),
   )
   const result = await Promise.all(locationsPromises)
-  const locations = result.map((text) => {
-    const location = matter(text).data
-    // format locations so google maps likes them
-    location.center = location.center.reverse().join(',')
-    return location
-  })
+  const locations = result
+    .map((text) => matter(text).data)
+    .filter((location) => location.guided)
+    .map((location) => {
+      location.center = location.center.reverse().join(',')
+      return location
+    })
 
   return locations
 }
@@ -61,10 +77,13 @@ const getRoute = async (locations, index) => {
 
   const path = '/maps/api/directions/json'
   const options = `?origin=${origin}&destination=${destination}`
-  const query = `${path}${options}&key=${process.env.REACT_APP_GMAPS_API_KEY}`
+  const query = `${path}${options}&key=${process.env.GMAPS}`
 
   const response = await fetch('https://maps.googleapis.com' + query)
-  const {routes} = await response.json()
+  if (response.error_message)
+    throw new Error('something went wrong with Google Maps :0')
+
+  const {routes} = JSON.parse(response)
   const route = decodePolyline(routes[0].overview_polyline.points)
   return route
 }
@@ -94,7 +113,6 @@ const main = async () => {
         start: location,
         end: locations[index + 1],
       }
-      console.log(feature.geometry.coordinates)
       return feature
     })
 
@@ -105,7 +123,7 @@ const main = async () => {
     'features': features,
   }
 
-  fs.writeFile('src/assets/routes.json', JSON.stringify(geo))
+  fs.writeFile('../public/routes.json', JSON.stringify(geo))
 }
 
 main()

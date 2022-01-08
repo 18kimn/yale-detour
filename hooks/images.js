@@ -1,58 +1,30 @@
-// reduces image file sizes, which can be quite large in original formats
-
 import sharp from 'sharp'
-import {join, dirname, basename} from 'path'
+import {join, resolve, dirname} from 'path'
 import {fileURLToPath} from 'url'
 import {promises as fs} from 'fs'
-import readdir from 'recursive-readdir'
-import du from 'du'
-import bytes from 'bytes'
+import process from 'process'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const imageDir = join(__dirname, '../public/images')
-const updateConsole = (str) => {
-  process.stdout.clearLine()
-  process.stdout.cursorTo(0)
-  process.stdout.write(str)
-}
+process.chdir(__dirname)
+const readFrom = resolve(__dirname, '../wiki/images')
+const writeTo = resolve(__dirname, '../public/images')
 
-// we only want to process images once, since processing them every time
-//  could make .jpg files unreasonably blurry
-//  my answer to this is to keep an array of files we already
-//  processed in the file referenced below
-//  this requires removing the process.cwd() string from the file so that it
-//  works on multiple machines
-const alreadyProcessed = await fs
-  .readFile(join(__dirname, 'processedImages.json'))
-  .then((string) => JSON.parse(string))
-  .then((arr) => arr.map((str) => str.replace(process.cwd(), '')))
-const allImages = await readdir(imageDir).then((arr) =>
-  arr.map((str) => str.replace(imageDir, '')),
-)
-
-const imagePaths = allImages.filter(
-  (imagePath) => !alreadyProcessed.includes(imagePath),
-)
-
-fs.writeFile(
-  join(__dirname, 'processedImages.json'),
-  JSON.stringify([...imagePaths, ...alreadyProcessed]),
-)
-
-console.log(
-  `Image processing beginning, current size is ${bytes(
-    await du(imageDir),
-  )}`,
-)
-
-if (imagePaths.length === 0)
-  updateConsole(
-    'No files to process D: either files were already optimized or this script broke \n',
-  )
-
-let currentIndex = 1
+const imagePaths = await fs
+  .readdir(readFrom, {withFileTypes: true})
+  .then((dirents) => {
+    return dirents.reduce(async (prev, current) => {
+      const resolved = resolve(readFrom, current.name)
+      // if it's a folder, pull out the stuff inside
+      const result = current.isDirectory()
+        ? (await fs.readdir(resolved)).map((path) =>
+            join(current.name, path),
+          )
+        : [current.name]
+      return [...(await prev), ...result]
+    }, [])
+  })
 imagePaths.forEach(async (imagePath) => {
-  const imageBuffer = await sharp(join(imageDir, imagePath))
+  const imageBuffer = await sharp(resolve(readFrom, imagePath))
     .resize(500)
     .jpeg({progressive: true, force: false, quality: 70})
     .png({
@@ -62,19 +34,7 @@ imagePaths.forEach(async (imagePath) => {
       compressionLevel: 9,
     })
     .toBuffer()
-  updateConsole(
-    `${basename(dirname(imagePath))}/${basename(
-      imagePath,
-    )} processed! Writing to disk now...`,
-  )
-  await fs.writeFile(imagePath, imageBuffer)
-
-  if (currentIndex === imagePaths.length) {
-    console.log(
-      `\nImage processing finished! ${
-        imagePaths.length
-      } files processed; Final size is ${bytes(await du(imageDir))}`,
-    )
-  }
-  currentIndex += 1
+  const writePath = resolve(writeTo, imagePath)
+  await fs.mkdir(dirname(writePath), {recursive: true})
+  await fs.writeFile(writePath, imageBuffer)
 })

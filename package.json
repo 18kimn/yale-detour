@@ -6,6 +6,10 @@
     "mapbox-gl": "^1.12.0"
   },
   "scripts": {
+    "images": "node hooks/images.js",
+    "content": "node hooks/content.js",
+    "routes": "node hooks/routes.js",
+    "prebuild": "npm run images && npm run content && npm run routes",
     "start": "vite",
     "build": "vite build"
   },
@@ -28,7 +32,10 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.33",
     "decode-google-map-polyline": "^1.0.1",
-    "gray-matter": "^4.0.3",
+    "dotenv": "^10.0.0",
+    "eslint": "^8.6.0",
+    "eslint-plugin-svelte3": "^3.3.0",
+    "marked": "^4.0.9",
     "sharp": "^0.29.2",
     "svelte": "^3.44.3",
     "vite": "^2.7.10"
