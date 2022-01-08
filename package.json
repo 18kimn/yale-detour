@@ -1,22 +1,17 @@
 {
   "name": "yale-detour",
   "version": "0.1.0",
-  "private": true,
+  "type": "module",
   "dependencies": {
-    "@typeform/embed": "0.25.6",
-    "bootstrap": "^4.5.2",
-    "gray-matter": "^4.0.3",
-    "mapbox-gl": "^1.12.0",
-    "react": "^17.0.2",
-    "react-bootstrap": "^1.6.3",
-    "react-dom": "^17.0.2",
-    "react-markdown": "^7.0.1",
-    "rehype-raw": "^6.1.0",
-    "webfontloader": "^1.6.28"
+    "mapbox-gl": "^1.12.0"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build"
+    "images": "node hooks/images.js",
+    "content": "node hooks/content.js",
+    "routes": "node hooks/routes.js",
+    "prebuild": "npm run images && npm run content && npm run routes",
+    "start": "vite",
+    "build": "vite build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,13 +30,14 @@
     ]
   },
   "devDependencies": {
-    "babel-loader": "8.1.0",
-    "customize-cra": "^1.0.0",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.33",
     "decode-google-map-polyline": "^1.0.1",
-    "https": "^1.0.0",
-    "node-fetch": "^3.0.0",
-    "react-app-rewired": "^2.1.8",
-    "react-scripts": "3",
-    "webpack-bundle-analyzer": "^4.4.2"
+    "dotenv": "^10.0.0",
+    "eslint": "^8.6.0",
+    "eslint-plugin-svelte3": "^3.3.0",
+    "marked": "^4.0.9",
+    "sharp": "^0.29.2",
+    "svelte": "^3.44.3",
+    "vite": "^2.7.10"
   }
 }
