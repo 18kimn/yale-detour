@@ -41,7 +41,7 @@
   >
     <path {d} />
   </svg>
-  <button id="change-location" on:click={() => handleClick()} />
+  <button class="change-location" on:click={() => handleClick()} />
 </div>
 
 <style>
@@ -55,7 +55,7 @@
     position: relative;
   }
 
-  #change-location {
+  .change-location {
     position: absolute;
     width: 100%;
     height: 100%;

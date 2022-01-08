@@ -7,23 +7,24 @@
 
   export let showing = false
   export let toggleModal = undefined
-  function closeModal() {
-    mainHidden.set(false)
-    showing = false
-  }
-
-  if (showing) {
-    mainHidden.set(true)
-  }
+  $: mainHidden.set(showing)
 </script>
 
 {#if showing}
   <div transition:fade id="container">
-    <button id="background" on:click={toggleModal || closeModal} />
+    <button
+      id="background"
+      aria-label="Close Modal"
+      on:click={() => {
+        showing = false
+        mainHidden.set(false)
+        if (toggleModal) toggleModal()
+      }}
+    />
     <div id="modal">
       <div id="spacer" />
       <div id="content">
-        <slot {closeModal} />
+        <slot closeModal={toggleModal} />
       </div>
     </div>
   </div>
@@ -47,7 +48,7 @@
   #background {
     position: absolute;
     background-color: black;
-    opacity: 95%;
+    opacity: 90%;
     top: 0;
     left: 0;
     width: 100%;
@@ -60,7 +61,8 @@
     position: relative;
     z-index: 4;
     width: 50%;
-    height: 100%;
+    height: fit-content;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
   }

@@ -3,29 +3,42 @@
   import Glitch from './Glitch.svelte'
   import Modal from './Modal.svelte'
   import About from './Intro.svelte'
+  import Contact from './Contact.svelte'
 
   let showingModal = false
+  let modalComponent = About
 
   function toggleModal() {
     showingModal = !showingModal
+    modalComponent = undefined
   }
 </script>
 
 <nav>
-  <Modal let:closeModal {toggleModal} showing={showingModal}>
-    <About {closeModal} />
-  </Modal>
+  <!-- the if clause is necessary to prevent it from overriding the 
+aria-hidden=true property on the main site content -->
+  {#if showingModal}
+    <Modal let:closeModal {toggleModal} showing={showingModal}>
+      <svelte:component this={modalComponent} {closeModal} />
+    </Modal>
+  {/if}
   <Glitch>
-    <h1>The Yale Detour</h1>
+    <h1><a href="/">The Yale Detour</a></h1>
   </Glitch>
   <div id="section">
     <div id="wrapper">
       <button
         on:click={() => {
+          modalComponent = About
           showingModal = true
         }}>About</button
       >
-      <button>Contact us</button>
+      <button
+        on:click={() => {
+          modalComponent = Contact
+          showingModal = true
+        }}>Contact us</button
+      >
       {#if $guided}
         <button on:click={() => guided.set(false)}
           >Explore the locations</button
@@ -48,14 +61,18 @@
   }
 
   #section,
-  nav :global(h1) {
+  h1 {
     display: flex;
     margin: 0.8rem;
   }
-  nav :global(h1) {
+  h1 {
     color: #3547ff;
     font-size: 1.5rem;
     height: fit-content;
+  }
+  a {
+    text-decoration: unset;
+    color: unset;
   }
 
   #section {

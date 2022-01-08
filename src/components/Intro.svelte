@@ -10,7 +10,7 @@
 
 <div class="about">
   <div class="about-text">
-    <Glitch>
+    <Glitch startWithGlitch={true}>
       <h1>The Yale Detour</h1>
     </Glitch>
     <blockquote>
@@ -85,12 +85,17 @@
   }
 
   .about-text {
-    padding: 1rem;
+    padding: 1em;
     border-top: solid 1px lightgray;
     border-bottom: solid 1px lightgray;
     display: flex;
     flex-flow: column;
     place-items: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: #3547ff;
   }
 
   .about-text > * {
@@ -134,11 +139,11 @@
   }
 
   #guided {
-    color: #007bff;
-    border: solid 1px #007bff;
+    color: #00356b;
+    border: solid 1px #00356b;
   }
   #guided:hover {
-    background-color: #007bff;
+    background-color: #00356b;
     color: white;
   }
 </style>
