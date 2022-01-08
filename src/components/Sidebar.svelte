@@ -104,8 +104,8 @@
   }
 
   #intro-image {
-    -webkit-mask: url(images/marker.svg) no-repeat 50% 50%;
-    mask: url(images/marker.svg) no-repeat 50% 50%;
+    -webkit-mask: url(/images/marker.svg) no-repeat 50% 50%;
+    mask: url(/images/marker.svg) no-repeat 50% 50%;
     -webkit-mask-size: 100%;
     mask-size: 100%;
     background-color: black;

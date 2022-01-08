@@ -130,8 +130,8 @@
   }
 
   .map :global(.marker) {
-    -webkit-mask: url(images/marker.svg) no-repeat 50% 25%;
-    mask: url(images/marker.svg) no-repeat 50% 25%;
+    -webkit-mask: url(/images/marker.svg) no-repeat 50% 25%;
+    mask: url(/images/marker.svg) no-repeat 50% 25%;
     background-color: white;
     padding: 1.5rem;
     width: 20px;
