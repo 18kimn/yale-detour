@@ -11,12 +11,12 @@
   }
 </script>
 
-<div id="nav-bar">
+<nav>
   <Modal let:closeModal {toggleModal} showing={showingModal}>
     <About {closeModal} />
   </Modal>
   <Glitch>
-    <h2>The Yale Detour</h2>
+    <h1>The Yale Detour</h1>
   </Glitch>
   <div id="section">
     <div id="wrapper">
@@ -32,15 +32,15 @@
         >
       {:else}
         <button on:click={() => guided.set(true)}
-          >Take a Guided Tour</button
+          >Switch to a guided tour</button
         >
       {/if}
     </div>
   </div>
-</div>
+</nav>
 
 <style>
-  #nav-bar,
+  nav,
   button {
     color: black;
     display: flex;
@@ -48,11 +48,12 @@
   }
 
   #section,
-  #nav-bar :global(h1) {
+  nav :global(h1) {
     display: flex;
     margin: 0.8rem;
   }
-  #nav-bar :global(h1) {
+  nav :global(h1) {
+    color: #3547ff;
     font-size: 1.5rem;
     height: fit-content;
   }

@@ -27,11 +27,6 @@ body,
   }
 }
 
-#app {
-  display: flex;
-  flex-direction: column;
-}
-
 button {
   background-color: transparent;
   font-family: Montserrat;

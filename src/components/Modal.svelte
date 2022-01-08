@@ -1,16 +1,25 @@
 <script lang="ts">
   import {fade} from 'svelte/transition'
+  import {mainHidden} from '../store.js'
+
+  // mainHidden toggles aria-hidden='true' on the main content
+  // so screen readers focus on the modal when it's showing
 
   export let showing = false
   export let toggleModal = undefined
   function closeModal() {
+    mainHidden.set(false)
     showing = false
+  }
+
+  if (showing) {
+    mainHidden.set(true)
   }
 </script>
 
 {#if showing}
   <div transition:fade id="container">
-    <div id="background" on:click={toggleModal || closeModal} />
+    <button id="background" on:click={toggleModal || closeModal} />
     <div id="modal">
       <div id="spacer" />
       <div id="content">

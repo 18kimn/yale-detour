@@ -109,6 +109,10 @@
     text-align: center;
   }
 
+  #content {
+    padding-bottom: 1rem;
+  }
+
   /** These styles target the markdown content; 
   * Also check src/defaults.css for global styles
  */

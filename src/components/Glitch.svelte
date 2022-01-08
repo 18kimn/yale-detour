@@ -1,11 +1,20 @@
 <script>
   let isHovering
 
+  function delay(time) {
+    return new Promise((resolve) => setTimeout(() => resolve(), time))
+  }
+
   // credit goes to https://codepen.io/kevinpowell/pen/YzqerQm
   // for most of this
-  function activateGlitch() {
+  async function activateGlitch() {
     isHovering = true
-    setTimeout(() => (isHovering = false), 1000)
+    await delay(150)
+    isHovering = false
+    await delay(400)
+    isHovering = true
+    await delay(400)
+    isHovering = false
   }
 </script>
 
@@ -37,24 +46,14 @@
     position: relative;
   }
 
-  #container :global(:first-child) {
-    animation: glitch 500ms 2;
-  }
-
   #first-overlay :global(:first-child) {
-    animation: glitch 650ms 2;
     clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
     transform: translate(-0.025em, -0.0125em);
-    /* color: green; */
-    opacity: 0.8;
   }
 
   #second-overlay :global(:first-child) {
-    animation: glitch 375ms 2;
     clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
     transform: translate(0.0125em, 0.025em);
-    /* color: red; */
-    opacity: 0.8;
   }
 
   span {
@@ -80,24 +79,24 @@
         0.025em 0.15em 0 rgba(0, 0, 255, 0.75);
     }
     25% {
-      text-shadow: 0.25em 0 0 rgba(255, 0, 0, 0.75),
-        0.125em -0.15em 0 rgba(0, 255, 0, 0.75),
-        0.01em 0.15em 0 rgba(0, 0, 255, 0.75);
+      text-shadow: 0.35em 0 0 rgba(255, 0, 0, 0.75),
+        0.225em -0.25em 0 rgba(0, 255, 0, 0.75),
+        0.1em 0.25em 0 rgba(0, 0, 255, 0.75);
     }
     50% {
-      text-shadow: 0.5em 0 0 rgba(255, 0, 0, 0.75),
-        0.1em -0.2em 0 rgba(0, 255, 0, 0.75),
-        0.1em 0.2em 0 rgba(0, 0, 255, 0.75);
+      text-shadow: 0.7em 0 0 rgba(255, 0, 0, 0.75),
+        0.2em -0.3em 0 rgba(0, 255, 0, 0.75),
+        0.2em 0.3em 0 rgba(0, 0, 255, 0.75);
     }
     75% {
-      text-shadow: 0.1em 0 0 rgba(255, 0, 0, 0.75),
-        -0.125em -0.15em 0 rgba(0, 255, 0, 0.75),
-        0.02em 0.15em 0 rgba(0, 0, 255, 0.75);
+      text-shadow: 0.3em 0 0 rgba(255, 0, 0, 0.75),
+        -0.225em -0.25em 0 rgba(0, 255, 0, 0.75),
+        0.1em 0.25em 0 rgba(0, 0, 255, 0.75);
     }
     100% {
-      text-shadow: 0.2em 0 0 rgba(255, 0, 0, 0.75),
-        -0.025em -0.1em 0 rgba(0, 255, 0, 0.75),
-        0.04em 0.15em 0 rgba(0, 0, 255, 0.75);
+      text-shadow: 0.4em 0 0 rgba(255, 0, 0, 0.75),
+        -0.225em -0.2em 0 rgba(0, 255, 0, 0.75),
+        0.15em 0.25em 0 rgba(0, 0, 255, 0.75);
     }
   }
 </style>

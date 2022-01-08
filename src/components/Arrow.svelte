@@ -1,26 +1,37 @@
 <script>
   import {tweened} from 'svelte/motion'
 
-  const opacity = tweened(0.15, {
+  const opacity = tweened(0.1, {
     duration: 200,
   })
 
   export let d
   export let onClick
 
+  let isHovering
   function handleClick() {
     onClick()
     opacity.set(1, {duration: 100})
-    opacity.set(0.15, {delay: 300})
+    if (isHovering) {
+      opacity.set(0.5, {delay: 300})
+    } else {
+      opacity.set(0.1, {delay: 300})
+    }
   }
 </script>
 
 <div
   class="container"
-  on:click={() => handleClick()}
-  on:mouseenter={() => opacity.set(0.5)}
-  on:mouseleave={() => opacity.set(0.15)}
+  on:mouseenter={() => {
+    isHovering = true
+    opacity.set(0.5)
+  }}
+  on:mouseleave={() => {
+    isHovering = false
+    opacity.set(0.1)
+  }}
 >
+  <button id="change-location" on:click={() => handleClick()} />
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="#000"
@@ -38,8 +49,17 @@
     display: flex;
     place-items: center;
     place-content: center;
-    padding: 3rem 1rem;
-    cursor: pointer;
+    height: 100%;
+    padding: 0 1rem;
     background-color: rgba(0, 0, 0, 0);
+    position: relative;
+  }
+
+  #change-location {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
   }
 </style>

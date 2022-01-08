@@ -90,7 +90,7 @@
   onDestroy(destroyMap)
 </script>
 
-<div id="container">
+<main id="container">
   <div class="map" bind:this={mapContainer} />
   <Sidebar
     location={locations[currentIndex]}
@@ -101,7 +101,7 @@
       currentIndex = (currentIndex || 0) + 1
     }}
   />
-</div>
+</main>
 
 <style>
   #container {
@@ -117,14 +117,32 @@
 
   .map :global(.mapboxgl-popup) {
     font-family: Montserrat;
+    animation: fadeIn 400ms 1;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   .map :global(.marker) {
-    background-image: url('/images/marker.png');
+    -webkit-mask: url(images/marker.svg) no-repeat 50% 50%;
+    mask: url(images/marker.svg) no-repeat 50% 50%;
+    background-color: white;
     background-size: cover;
-    width: 35px;
-    height: 35px;
+    padding: 1.5rem;
+    width: 20px;
+    height: 34px;
     cursor: pointer;
+    transition: background-color ease-in-out 200ms;
+  }
+
+  .map :global(.marker:hover) {
+    background-color: #b24fff;
   }
 
   .map :global(.mapboxgl-ctrl-attrib a) {
