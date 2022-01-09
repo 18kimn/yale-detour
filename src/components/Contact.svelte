@@ -14,7 +14,8 @@
     anything else!
     <section>
       <h2>Main</h2>
-      <p>Nathan Kim, nathan.kim@yale.edu</p>
+      <p>Dora Guo, dora.guo@yale.edu</p>
+      <p>Resty Fufunan, resty.fufunan@yale.edu</p>
     </section>
     <section>
       <h2>Design</h2>

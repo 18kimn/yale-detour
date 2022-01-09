@@ -18,8 +18,8 @@
   <!-- the if clause is necessary to prevent it from overriding the 
 aria-hidden=true property on the main site content -->
   {#if showingModal}
-    <Modal let:closeModal {toggleModal} showing={showingModal}>
-      <svelte:component this={modalComponent} {closeModal} />
+    <Modal {toggleModal} showing={showingModal}>
+      <svelte:component this={modalComponent} {toggleModal} />
     </Modal>
   {/if}
   <Glitch>

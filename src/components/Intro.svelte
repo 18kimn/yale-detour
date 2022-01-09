@@ -1,10 +1,10 @@
 <script>
   import {guided} from '../store.js'
   import Glitch from './Glitch.svelte'
-  export let closeModal
+  export let toggleModal
   function chooseGuided(newGuided) {
     guided.set(newGuided)
-    closeModal()
+    toggleModal()
   }
 </script>
 

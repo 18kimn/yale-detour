@@ -11,17 +11,18 @@ const contentDir = resolve('../wiki/locations')
  * this function parses YAML frontmatter
  * into a JS object
  * Doesn't handle tables or anything like that
-*/
-export function parseYAML(frontmatter){
+ */
+export function parseYAML(frontmatter) {
   return frontmatter.split('\n').reduce((accum, pair) => {
-    if(!pair) return accum
-    const [key, value] = pair.split(':').map(item => item.trim())
+    if (!pair) return accum
+    const [key, value] = pair.split(':').map((item) => item.trim())
     let result
-    if(value === 'true' || value === 'false'){
-      result = (value === 'true')
-    } else if(value.slice(0, 1) === '[') {
-      result = eval(value)
-    } else if(!isNaN(parseFloat(value))) {
+    if (value === 'true' || value === 'false') {
+      result = value === 'true'
+    } else if (value.slice(0, 1) === '[') {
+      // switched from leaflet to mapbox; we now need reversed coords
+      result = eval(value).reverse()
+    } else if (!isNaN(parseFloat(value))) {
       result = parseFloat(value)
     } else {
       result = value
@@ -32,10 +33,15 @@ export function parseYAML(frontmatter){
 
 /** Reads in our markdown files from the wiki and writes it out
  * to the public/ directory as a JSON file
- *
- * This lets us avoid packaging gray-matter as a runtime dependency
  */
 async function processContent() {
+  const renderer = {
+    link(href, title, text) {
+      return `<a target="_blank" href="${href}">${text}</a>`
+    },
+  }
+
+  marked.use({renderer})
   const contentObj = (await fs.readdir(contentDir)).map(
     async (filename) => {
       const text = await fs.readFile(

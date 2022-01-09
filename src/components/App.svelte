@@ -1,13 +1,18 @@
 <script lang="ts">
   import SiteNav from './SiteNav.svelte'
-  import Map from './Map.svelte'
+  import Map from './Map/Map.svelte'
   import Modal from './Modal.svelte'
   import Intro from './Intro.svelte'
   import {mainHidden} from '../store.js'
+
+  let showing = true
+  function toggleModal() {
+    showing = !showing
+  }
 </script>
 
-<Modal let:closeModal showing>
-  <Intro {closeModal} />
+<Modal {toggleModal} {showing}>
+  <Intro {toggleModal} />
 </Modal>
 <div id="content" style="height: 100%;" aria-hidden={$mainHidden}>
   <SiteNav />
