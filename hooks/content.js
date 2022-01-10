@@ -42,16 +42,16 @@ async function processContent() {
   }
 
   marked.use({renderer})
-  const contentObj = (await fs.readdir(contentDir)).map(
-    async (filename) => {
+  const contentObj = (await fs.readdir(contentDir))
+    .filter(filename => filename.match(/\.md/))
+    .map(async (filename) => {
       const text = await fs.readFile(
         resolve(contentDir, filename),
         'utf-8',
       )
       const [_, frontmatter, content] = text.split('---')
       return {data: parseYAML(frontmatter), content: marked(content)}
-    },
-  )
+    })
   const content = await Promise.all(contentObj)
 
   fs.writeFile('../public/content.json', JSON.stringify(content))

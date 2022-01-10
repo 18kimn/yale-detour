@@ -1,4 +1,4 @@
-import {join, dirname} from 'path'
+import {dirname} from 'path'
 import {promises as fs} from 'fs'
 import decodePolyline from 'decode-google-map-polyline'
 import dotenv from 'dotenv'
@@ -37,7 +37,7 @@ const getLocations = async () => {
       .then(text => JSON.parse(text))
   ).filter((location) => location.data.guided)
     .map((location) => {
-      location.data.center = location.data.center.reverse().join(',')
+      location.data.center = location.data.center.join(',')
       return location.data
     })
 
@@ -72,7 +72,6 @@ const getRoute = async (locations, index) => {
   const response = await fetch('https://maps.googleapis.com' + query)
   if (response.error_message)
     throw new Error('something went wrong with Google Maps :0')
-
   const {routes} = JSON.parse(response)
   const route = decodePolyline(routes[0].overview_polyline.points)
   return route
