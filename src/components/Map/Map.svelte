@@ -7,7 +7,7 @@
   import {onGuidedUpdate} from './guided.js'
   import Sidebar from '../Sidebar.svelte'
 
-  /* 
+  /*
     Despite many attempts at refactoring this code is still
     fairly messy. Would appreciate any help!
   */
@@ -21,7 +21,7 @@
   let destroyMap
 
   onMount(async () => {
-    ;[map, destroyMap] = initializeMap(mapContainer)
+    [map, destroyMap] = initializeMap(mapContainer)
     ;[allLocations, routes] = await Promise.all(fetchData(map))
     locations = onGuidedUpdate(
       map,

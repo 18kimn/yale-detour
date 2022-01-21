@@ -60,7 +60,6 @@
   #modal {
     position: relative;
     z-index: 4;
-    width: 50%;
     height: fit-content;
     max-height: 100%;
     display: flex;
