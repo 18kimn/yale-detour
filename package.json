@@ -8,7 +8,10 @@
     "routes": "node hooks/routes.js",
     "prebuild": "npm run images && npm run content && npm run routes",
     "start": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "lint": "eslint --fix",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "format": "prettier . --write"
   },
   "license": "Hippocratic-2.1",
   "browserslist": {
@@ -24,15 +27,17 @@
     ]
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.33",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.35",
     "decode-google-map-polyline": "^1.0.1",
     "dotenv": "^10.0.0",
-    "eslint": "^8.6.0",
-    "eslint-plugin-svelte3": "^3.3.0",
-    "marked": "^4.0.9",
-    "sharp": "^0.29.2",
-    "svelte": "^3.44.3",
-    "vite": "^2.7.10"
+    "eslint": "^8.7.0",
+    "eslint-plugin-svelte3": "^3.4.0",
+    "marked": "^4.0.10",
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.6.0",
+    "sharp": "^0.29.3",
+    "svelte": "^3.46.3",
+    "vite": "^2.7.13"
   },
   "dependencies": {
     "leaflet": "^1.7.1"

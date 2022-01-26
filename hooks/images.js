@@ -17,8 +17,8 @@ const imagePaths = await fs
       // if it's a folder, pull out the stuff inside
       const result = current.isDirectory()
         ? (await fs.readdir(resolved)).map((path) =>
-          join(current.name, path),
-        )
+            join(current.name, path),
+          )
         : [current.name]
       return [...(await prev), ...result]
     }, [])
@@ -26,7 +26,12 @@ const imagePaths = await fs
 imagePaths.forEach(async (imagePath) => {
   const imageBuffer = await sharp(resolve(readFrom, imagePath))
     .resize(500)
-    .jpeg({progressive: true, mozjpeg: true, force: false, quality: 80})
+    .jpeg({
+      progressive: true,
+      mozjpeg: true,
+      force: false,
+      quality: 80,
+    })
     .png({
       progressive: true,
       force: false,

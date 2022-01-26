@@ -33,9 +33,11 @@ async function fetch(url) {
  * */
 const getLocations = async () => {
   const locations = (
-    await fs.readFile('../public/content.json', 'utf-8')
-      .then(text => JSON.parse(text))
-  ).filter((location) => location.data.guided)
+    await fs
+      .readFile('../public/content.json', 'utf-8')
+      .then((text) => JSON.parse(text))
+  )
+    .filter((location) => location.data.guided)
     .map((location) => {
       location.data.center = location.data.center.join(',')
       return location.data

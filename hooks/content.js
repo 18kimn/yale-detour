@@ -43,7 +43,7 @@ async function processContent() {
 
   marked.use({renderer})
   const contentObj = (await fs.readdir(contentDir))
-    .filter(filename => filename.match(/\.md/))
+    .filter((filename) => filename.match(/\.md/))
     .map(async (filename) => {
       const text = await fs.readFile(
         resolve(contentDir, filename),
