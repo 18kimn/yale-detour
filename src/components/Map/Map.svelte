@@ -1,6 +1,5 @@
 <script>
   import {onDestroy, onMount} from 'svelte'
-  import leaflet from 'leaflet'
   import {guided} from '../../store.js'
   import {initializeMap, fetchData} from './helpers.js'
   import {updateIndex, onLocationChange} from './location.js'
@@ -21,7 +20,7 @@
   let destroyMap
 
   onMount(async () => {
-    [map, destroyMap] = initializeMap(mapContainer)
+    ;[map, destroyMap] = initializeMap(mapContainer)
     ;[allLocations, routes] = await Promise.all(fetchData(map))
     locations = onGuidedUpdate(
       map,

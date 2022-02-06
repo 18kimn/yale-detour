@@ -40,6 +40,7 @@
           out:fade={{duration: 150, delay: 0}}
         >
           <h2>{location.data.title}</h2>
+          <p id="author">by {location.data.author}</p>
           <div>{@html location.content}</div>
         </div>
       {/key}
@@ -117,6 +118,10 @@
     padding-bottom: 1rem;
   }
 
+  #author {
+    font-style: italic;
+    margin: 1rem 0;
+  }
   /** These styles target the markdown content; 
   * Also check src/defaults.css for global styles
  */
