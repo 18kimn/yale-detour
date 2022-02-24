@@ -1,7 +1,8 @@
 <script>
+  import {fade} from 'svelte/transition'
+  import {onMount} from 'svelte'
   import Arrow from './Arrow.svelte'
   import Glitch from './Glitch.svelte'
-  import {fade} from 'svelte/transition'
 
   export let onLeft
   export let onRight
@@ -16,19 +17,36 @@
       contentContainer.scrollTop = 0
     }, 200)
   }
-
   $: scrollUp(location)
+
+  let buttonsBottom = false
+  onMount(() => {
+    const ro = new ResizeObserver((entries) => {
+      const {width} = entries[0].contentRect
+      buttonsBottom = width < 500
+    })
+    ro.observe(document.querySelector('body'))
+  })
 </script>
 
-<div id="container">
-  <Arrow
-    onClick={() => {
-      scrollUp()
-      onLeft()
-    }}
-    d="M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z"
-  />
-  <div bind:this={contentContainer} id="content-container">
+<div
+  id="container"
+  style={buttonsBottom && 'flex-flow: column; flex: 9;'}
+>
+  {#if !buttonsBottom}
+    <Arrow
+      onClick={() => {
+        scrollUp()
+        onLeft()
+      }}
+      d="M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z"
+    />
+  {/if}
+  <div
+    bind:this={contentContainer}
+    id="content-container"
+    style={buttonsBottom && 'margin: 1rem;'}
+  >
     {#if location?.content}
       {#key location}
         <!-- The `style=` section is to prevent a layout shift 
@@ -57,18 +75,45 @@
       </div>
     {/if}
   </div>
-  <Arrow
-    onClick={() => {
-      scrollUp()
-      onRight()
-    }}
-    d="M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z"
-  />
+  {#if buttonsBottom}
+    <div id="bottom-buttons">
+      <Arrow
+        style="height: fit-content; flex: 1;"
+        width={25}
+        height={25}
+        onClick={() => {
+          scrollUp()
+          onLeft()
+        }}
+        d="M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z"
+      />
+
+      <Arrow
+        style="height: fit-content; flex:1;"
+        width={25}
+        height={25}
+        onClick={() => {
+          scrollUp()
+          onRight()
+        }}
+        d="M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z"
+      />
+    </div>
+  {:else}
+    <Arrow
+      onClick={() => {
+        scrollUp()
+        onRight()
+      }}
+      d="M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z"
+    />
+  {/if}
 </div>
 
 <style>
   #container {
-    flex: 1;
+    flex: 4;
+    min-width: 30ch;
     display: flex;
     flex-direction: row;
     place-items: center;
@@ -84,8 +129,17 @@
     scrollbar-width: none;
     display: grid;
   }
+
   #content-container::-webkit-scrollbar {
     display: none;
+  }
+
+  #bottom-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 0.5rem;
   }
 
   #content,

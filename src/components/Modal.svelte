@@ -7,6 +7,12 @@
 
   export let showing = false
   export let toggleModal = undefined
+
+  const toggle = () => {
+    showing = false
+    mainHidden.set(false)
+    if (toggleModal) toggleModal()
+  }
   $: mainHidden.set(showing)
 </script>
 
@@ -15,14 +21,10 @@
     <button
       id="background"
       aria-label="Close Modal"
-      on:click={() => {
-        showing = false
-        mainHidden.set(false)
-        if (toggleModal) toggleModal()
-      }}
+      on:click={toggle}
     />
     <div id="modal">
-      <div id="spacer" />
+      <div id="spacer" on:click={toggle} />
       <div id="content">
         <slot closeModal={toggleModal} />
       </div>
@@ -32,6 +34,7 @@
 
 <style>
   #container {
+    box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
@@ -64,21 +67,27 @@
     max-height: 100%;
     display: flex;
     flex-direction: column;
+    margin: 0 2rem;
   }
 
   #spacer {
+    cursor: pointer;
     height: 3rem;
   }
+
   #content {
     flex-grow: 1;
     overflow: auto;
     border: solid 1px black;
-    border-radius: 10px;
+    border-radius: 0.5rem;
     width: 100%;
+    max-width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
+    padding: 1rem;
+    box-sizing: border-box;
   }
 
   #content::-webkit-scrollbar {

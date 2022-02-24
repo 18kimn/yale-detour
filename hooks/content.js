@@ -37,7 +37,8 @@ export function parseYAML(frontmatter) {
 async function processContent() {
   const renderer = {
     link(href, title, text) {
-      return `<a target="_blank" href="${href}">${text}</a>`
+      const titleText = title ? `title="${title}"` : ''
+      return `<a target="_blank" ${titleText} href="${href}">${text}</a>`
     },
   }
 

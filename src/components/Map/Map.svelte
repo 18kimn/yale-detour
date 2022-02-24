@@ -42,11 +42,6 @@
       onMarkerClick,
     )
   })
-  /*
-  todo: on marker click update index
-    on arrow click update index
-    on update index change location
-  */
 
   function onMarkerClick(location) {
     index = location.data.id
@@ -55,6 +50,7 @@
   function onArrowClick(diff) {
     index = updateIndex((index || 0) + diff, locations)
   }
+
   $: onLocationChange(
     map,
     isGuided,
@@ -63,6 +59,7 @@
     routes,
     onMarkerClick,
   )
+
   onDestroy(destroyMap)
 </script>
 
@@ -83,8 +80,17 @@
     overflow: auto;
   }
 
+  /* honestly can't find a good non-media query way */
+  @media (max-width: 900px) {
+    #container {
+      flex-flow: column;
+    }
+  }
+
   .map {
-    width: 60%;
+    min-height: 40vh;
+    max-width: 100vw;
+    flex: 6;
   }
 
   @keyframes fadeIn {

@@ -28,6 +28,9 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.35",
+    "@types/leaflet": "^1.7.9",
+    "@types/marked": "^4.0.2",
+    "@types/sharp": "^0.29.5",
     "decode-google-map-polyline": "^1.0.1",
     "dotenv": "^10.0.0",
     "eslint": "^8.7.0",
@@ -37,6 +40,7 @@
     "prettier-plugin-svelte": "^2.6.0",
     "sharp": "^0.29.3",
     "svelte": "^3.46.3",
+    "svelte-check": "^2.4.5",
     "vite": "^2.7.13"
   },
   "dependencies": {

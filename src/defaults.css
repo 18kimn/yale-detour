@@ -35,9 +35,9 @@ button {
 
 blockquote {
   background-color: #f0dcff;
-  padding-top: 1rem;
   color: #0d3563;
   padding: 1rem 2rem;
+  margin: 1rem 0;
   font-style: italic;
 }
 

@@ -8,7 +8,12 @@
   export let d
   export let onClick
 
+  export let style = ''
+  export let width = 35
+  export let height = 35
+
   let isHovering
+  /** calls the onclick callback prop and modifies style accordingly */
   function handleClick() {
     onClick()
     opacity.set(1, {duration: 100})
@@ -22,6 +27,7 @@
 
 <div
   class="container"
+  {style}
   on:mouseenter={() => {
     isHovering = true
     opacity.set(0.5)
@@ -34,8 +40,8 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="#000"
-    width="35"
-    height="35"
+    {width}
+    {height}
     opacity={$opacity}
     viewBox="0 0 8 8"
   >

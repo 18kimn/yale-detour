@@ -1,5 +1,6 @@
 <script>
   export let startWithGlitch = false
+  export let style = ''
   let isHovering
 
   function delay(time) {
@@ -24,6 +25,7 @@
 <div
   id="container"
   class:glitch-500={isHovering}
+  {style}
   on:mouseenter={activateGlitch}
   on:mouseleave={() => (isHovering = false)}
 >

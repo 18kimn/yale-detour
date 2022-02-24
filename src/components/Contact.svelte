@@ -1,10 +1,10 @@
 <script>
-  export let closeModal
+  export let toggleModal
 </script>
 
 <div id="container">
   <div id="button-container">
-    <button aria-label="Close Modal" on:click={closeModal} />
+    <button aria-label="Close Modal" on:click={toggleModal} />
   </div>
   <div id="contact-content">
     <h1>Contact</h1>
@@ -57,7 +57,9 @@
   }
 
   #contact-content {
-    padding: 0 3rem 3rem 3rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-top: 0;
   }
 
   h1 {

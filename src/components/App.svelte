@@ -1,5 +1,5 @@
 <script lang="ts">
-  import SiteNav from './SiteNav.svelte'
+  import Nav from './SiteNav.svelte'
   import Map from './Map/Map.svelte'
   import Modal from './Modal.svelte'
   import Intro from './Intro.svelte'
@@ -15,7 +15,7 @@
   <Intro {toggleModal} />
 </Modal>
 <div id="content" style="height: 100%;" aria-hidden={$mainHidden}>
-  <SiteNav />
+  <Nav />
   <Map />
 </div>
 

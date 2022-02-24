@@ -1,7 +1,7 @@
 import {addMarker} from './helpers.js'
 
 /** For guided mode, we want a focused map -> remove things */
-function toGuided(allLocations, routes) {
+function toGuided(allLocations) {
   const locations = allLocations.filter(
     (location) => location.data.guided,
   )
@@ -33,6 +33,6 @@ export function onGuidedUpdate(
   if (!(map && routes)) return allLocations
   map.closePopup()
   return isGuided
-    ? toGuided(allLocations, routes)
+    ? toGuided(allLocations)
     : toExplore(map, allLocations, routes, onClick)
 }
