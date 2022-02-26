@@ -14,29 +14,14 @@
       <h1>The Yale Detour</h1>
     </Glitch>
     <p>
-      This is the Yale Detour, a map and history of Yale University
-      with two ambitions:
-    </p>
-    <ol>
-      <li>
-        To think about how Yale’s history as a colonial institution
-        remains embedded in its architecture and landscape in the
-        present-day.
-      </li>
-      <li>
-        To highlight sites where Yale students and New Haven residents
-        have changed the course of the university’s history through
-        remarkable moments of struggle.
-      </li>
-    </ol>
-    <p>
-      In doing so, we want to push against the cheery versions of Yale
-      history spread by Yale's official tour guides, plaques,
-      memorials, and namesakes.
+      This is the Yale Detour, a map of Yale's colonial history and
+      those that struggled against it. In telling this story, we hope
+      to push back on the cheery and misleading narratives spread by
+      Yale's tour guides, plaques, memorials, and namesakes.
     </p>
     <p>
-      Click <em>Explore</em> to freely move through the documented
-      locations, or click
+      Click <em>Explore</em> to freely move through our locations, or
+      click
       <em>Guided Tour</em> to begin our tour through a subset of these
       sites.
     </p>

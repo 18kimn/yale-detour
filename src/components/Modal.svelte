@@ -23,11 +23,8 @@
       aria-label="Close Modal"
       on:click={toggle}
     />
-    <div id="modal">
-      <div id="spacer" on:click={toggle} />
-      <div id="content">
-        <slot closeModal={toggleModal} />
-      </div>
+    <div id="content">
+      <slot closeModal={toggleModal} />
     </div>
   </div>
 {/if}
@@ -41,8 +38,10 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    place-items: center;
+    place-content: center;
     z-index: 4;
+    padding: 1rem;
     /* mapbox has a z-index of 2 on their attribution
       so for the modal to work it has to have a higher one
      */
@@ -60,28 +59,15 @@
     z-index: 3;
   }
 
-  #modal {
-    position: relative;
+  #content {
     z-index: 4;
     height: fit-content;
     max-height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 2rem;
-  }
-
-  #spacer {
-    cursor: pointer;
-    height: 3rem;
-  }
-
-  #content {
-    flex-grow: 1;
+    width: fit-content;
+    max-width: 100vw;
     overflow: auto;
     border: solid 1px black;
-    border-radius: 0.5rem;
-    width: 100%;
-    max-width: 100vw;
+    border-radius: 0.8rem;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -4,7 +4,8 @@
   import {initializeMap, fetchData} from './helpers.js'
   import {updateIndex, onLocationChange} from './location.js'
   import {onGuidedUpdate} from './guided.js'
-  import Sidebar from '../Sidebar.svelte'
+  import Horizontal from '../Sidebar/Horizontal.svelte'
+  import Vertical from '../Sidebar/Vertical.svelte'
 
   /*
     Despite many attempts at refactoring this code is still
@@ -19,6 +20,7 @@
   let routes = {}
   let destroyMap
 
+  let vertical = window.innerWidth < 900
   onMount(async () => {
     ;[map, destroyMap] = initializeMap(mapContainer)
     ;[allLocations, routes] = await Promise.all(fetchData(map))
@@ -29,6 +31,11 @@
       isGuided,
       onMarkerClick,
     )
+
+    window.addEventListener('resize', () => {
+      vertical = window.innerWidth < 900
+      console.log(vertical)
+    })
   })
 
   guided.subscribe((newGuided) => {
@@ -63,13 +70,21 @@
   onDestroy(destroyMap)
 </script>
 
-<main id="container">
-  <div class="map" bind:this={mapContainer} />
-  <Sidebar
-    location={locations[index]}
-    onLeft={() => onArrowClick(-1)}
-    onRight={() => onArrowClick(+1)}
-  />
+<main id="container" style={vertical ? 'flex-flow: column;' : ''}>
+  <div class="map" transtion:slide bind:this={mapContainer} />
+  {#if vertical}
+    <Vertical
+      location={locations[index]}
+      onLeft={() => onArrowClick(-1)}
+      onRight={() => onArrowClick(+1)}
+    />
+  {:else}
+    <Horizontal
+      location={locations[index]}
+      onLeft={() => onArrowClick(-1)}
+      onRight={() => onArrowClick(+1)}
+    />
+  {/if}
 </main>
 
 <style>
@@ -80,17 +95,11 @@
     overflow: auto;
   }
 
-  /* honestly can't find a good non-media query way */
-  @media (max-width: 900px) {
-    #container {
-      flex-flow: column;
-    }
-  }
-
   .map {
-    min-height: 40vh;
+    flex: 3;
     max-width: 100vw;
-    flex: 6;
+    position: relative;
+    transition: all ease-in-out 200ms;
   }
 
   @keyframes fadeIn {
@@ -122,6 +131,7 @@
   .map :global(.leaflet-pane) {
     z-index: unset;
   }
+
   .map:global(.leaflet-container) {
     background: #0f3157;
   }
@@ -131,6 +141,7 @@
     font-family: Montserrat;
     animation: fadeIn 400ms 1;
   }
+
   .map :global(.leaflet-fade-anim) {
     transition: unset;
   }
@@ -138,6 +149,7 @@
   .map :global(.leaflet-control-attribution) {
     background: unset;
   }
+
   .map :global(.leaflet-control-attribution a) {
     font-family: Montserrat;
     color: white;
