@@ -7,8 +7,18 @@
   export let onRight
   export let location = {data: {}, content: ''}
 
+  let taps = 0
   let content
   let expanded = false
+  let svg
+
+  const shade = () => {
+    svg.style = 'background: rgba(0, 0, 0, 0.1);'
+  }
+
+  const unshade = () => {
+    svg.style = 'background: rgba(0, 0, 0, 0);'
+  }
   /** scroll back to top when content changes */
   function scrollUp() {
     if (!content) return
@@ -31,23 +41,38 @@
       {#if location?.content}
         <svg
           viewBox="0 0 330 330"
+          bind:this={svg}
+          on:mouseover={shade}
+          on:focus={shade}
+          on:mouseout={unshade}
+          on:blur={unshade}
           on:click={() => {
             expanded = !expanded
+            taps += 1
+            unshade()
           }}
         >
-          <path
-            fill="gray"
-            transform={expanded
-              ? 'rotate(90 165 165)'
-              : 'rotate(-90 165 165)'}
-            id="XMLID_226_"
-            d="M233.252,155.997L120.752,6.001c-4.972-6.628-14.372-7.97-21-3c-6.628,4.971-7.971,14.373-3,21
+          {#key taps}
+            <path
+              fill="gray"
+              transform={expanded
+                ? 'rotate(90 165 330) scale(1 2) translate(-100 0)'
+                : 'rotate(-90 165 330) scale(1 2) translate(100 0)'}
+              id="XMLID_226_"
+              d="M233.252,155.997L120.752,6.001c-4.972-6.628-14.372-7.97-21-3c-6.628,4.971-7.971,14.373-3,21
 	l105.75,140.997L96.752,306.001c-4.971,6.627-3.627,16.03,3,21c2.698,2.024,5.856,3.001,8.988,3.001
-	c4.561,0,9.065-2.072,12.012-6.001l112.5-150.004C237.252,168.664,237.252,161.33,233.252,155.997z"
-          /></svg
-        >
+  c4.561,0,9.065-2.072,12.012-6.001l112.5-150.004C237.252,168.664,237.252,161.33,233.252,155.997z"
+              in:fade={{duration: 500, delay: 500}}
+              out:fade={{duration: 500, delay: 0}}
+            />
+          {/key}
+        </svg>
+        {#if taps === 0}
+          <p id="hint">tap to expand</p>
+        {:else if taps === 1}
+          <p id="hint">tap to collapse</p>
+        {/if}
         <h2>{location.data.title}</h2>
-        <p id="author">by {location.data.author}</p>
       {:else}
         <div id="intro">
           <Glitch>
@@ -70,6 +95,7 @@
           in:fade={{duration: 150, delay: 200}}
           out:fade={{duration: 150, delay: 0}}
         >
+          <p id="author">by {location.data.author}</p>
           {@html location.content}
         </div>
       {/key}
@@ -88,7 +114,7 @@
     d="M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z"
   />
   <Arrow
-    style="height: fit-content; flex:1;"
+    style="height: fit-content; flex: 1;"
     width={25}
     height={25}
     onClick={() => {
@@ -123,18 +149,31 @@
 
   #header {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h2 {
+    margin-block: 0;
+    margin: 1rem 0;
   }
 
   svg {
     width: 100%;
     height: 2rem;
-    transform: scaleX(1.5);
     transition: background ease-in-out 200ms;
+    border: none;
   }
 
-  svg:hover,
-  svg:active {
-    background: rgba(0, 0, 0, 0.1);
+  svg:focus {
+    outline: unset;
+  }
+
+  #hint {
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-style: italic;
   }
 
   #intro {
@@ -154,7 +193,7 @@
   #content {
     overflow: hidden;
     flex: 0;
-    transition: flex ease-in-out 200ms;
+    transition: flex ease-in-out 400ms;
   }
 
   #content::-webkit-scrollbar {

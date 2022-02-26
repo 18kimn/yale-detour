@@ -1,4 +1,4 @@
-import leaflet from 'leaflet'
+import leaflet, {point} from 'leaflet'
 
 /** As a build step, our markdown files and the routes between
  * locations are processed into JSON. This fetches them
@@ -75,7 +75,15 @@ export function addPopup(map, location) {
     .openOn(map)
 }
 
-const markerIcon = leaflet.divIcon({className: 'marker'})
+const markerIcon = leaflet.divIcon({
+  html: `<svg width="20" height="34" viewBox="0 0 20 34" 
+  xmlns="http://www.w3.org/2000/svg">
+  <path d="M8 28C6.77261 25.5452 0 15.3484 0 10.9382C0 4.89718 4.47714 0 10 0C15.5229 0 20 4.89718 20 10.9382C20 15.3484 13.2471 25.5057 12 28C8 36 12 36 8 28ZM10 15.1008C12.3012 15.1008 14.1667 13.4553 14.1667 10.9382C14.1667 8.4211 12.3012 6.92458 10 6.92458C7.6988 6.92458 5.83333 8.4211 5.83333 10.9382C5.83333 13.4553 7.6988 15.1008 10 15.1008Z" fill="white"/>
+</svg>
+  `,
+  iconSize: [20, 34],
+  iconAnchor: [10, 34],
+})
 /** Appends a white marker to the map */
 export function addMarker(map, location, onClick) {
   if (!location) return

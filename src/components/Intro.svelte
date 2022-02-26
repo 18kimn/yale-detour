@@ -57,12 +57,7 @@
     max-width: 57ch;
   }
 
-  ol {
-    margin: 0;
-  }
-
-  p,
-  li {
+  p {
     text-align: left;
     box-sizing: border-box;
     margin: 0.5rem 0;

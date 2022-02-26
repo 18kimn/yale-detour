@@ -111,21 +111,16 @@
     }
   }
 
-  .map :global(.marker) {
-    -webkit-mask: url(/images/marker.svg) no-repeat 50% 25%;
-    mask: url(/images/marker.svg) no-repeat 50% 25%;
-    background-color: white;
-    padding: 1.5rem;
-    margin-top: -1rem !important;
-    margin-left: -2rem !important;
-    width: 20px !important;
-    height: 34px !important;
-    cursor: pointer;
-    transition: background-color ease-in-out 200ms;
+  .map :global(.leaflet-div-icon) {
+    background: none;
+    border: none;
   }
 
-  .map :global(.marker:hover) {
-    background-color: #b24fff;
+  .map :global(.leaflet-div-icon > svg > path) {
+    transition: fill ease-in-out 200ms;
+  }
+  .map :global(.leaflet-div-icon > svg > path:hover) {
+    fill: #b24fff;
   }
 
   .map :global(.leaflet-pane) {
