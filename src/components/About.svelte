@@ -36,17 +36,17 @@
         Yale’s empire-building.
       </p>
       <p>
-        This “DeTour” seeks to complicate readers’ conception of Yale
-        as a beacon of prestige and opportunity. We see the COVID-19
-        pandemic and the university’s subsequent shutdown as a moment
-        of possibil -ms-overflow-style: none; ity in this regard; this
-        is a chance to reorient and reimagine how we interact with the
-        space Yale occupies in New Haven. While Yale certainly lives
-        up to its promise of granting special status to inheritors of
-        its name and legacy, it does so at a price. That price is
-        protection of the status quo, a stasis ensuring that power is
-        left untouched, in fact, strengthened. Centuries of domination
-        and control create(d) Yale and bring life to its educational
+        The Yale Detour seeks to complicate readers’ conception of
+        Yale as a beacon of prestige and opportunity. We see the
+        COVID-19 pandemic and the university’s subsequent shutdown as
+        a moment of possibilty in this regard; this is a chance to
+        reorient and reimagine how we interact with the space Yale
+        occupies in New Haven. While Yale certainly lives up to its
+        promise of granting special status to inheritors of its name
+        and legacy, it does so at a price. That price is protection of
+        the status quo, a stasis ensuring that power is left
+        untouched, in fact, strengthened. Centuries of domination and
+        control create(d) Yale and bring life to its educational
         mission of “improving” the world. Divorcing past from present
         safeguards every tower, dining hall, statue, museum,
         stained-glass window, and even restroom from subversion and

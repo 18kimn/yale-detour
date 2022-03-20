@@ -20,13 +20,16 @@
 </script>
 
 <div id="container">
-  <Arrow
-    onClick={() => {
-      scrollUp()
-      onLeft()
-    }}
-    d="M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z"
-  />
+  <div class="arrow">
+    <Arrow
+      height="3rem"
+      transform="rotate(-180 180 210)"
+      onClick={() => {
+        scrollUp()
+        onLeft()
+      }}
+    />
+  </div>
   <div bind:this={contentContainer} id="content-container">
     {#if location?.content}
       {#key location}
@@ -56,13 +59,15 @@
       </div>
     {/if}
   </div>
-  <Arrow
-    onClick={() => {
-      scrollUp()
-      onRight()
-    }}
-    d="M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z"
-  />
+  <div class="arrow">
+    <Arrow
+      height="3rem"
+      onClick={() => {
+        scrollUp()
+        onRight()
+      }}
+    />
+  </div>
 </div>
 
 <style>
@@ -87,6 +92,11 @@
 
   #content-container::-webkit-scrollbar {
     display: none;
+  }
+
+  .arrow {
+    height: 100%;
+    display: flex;
   }
 
   #content,

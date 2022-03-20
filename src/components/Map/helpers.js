@@ -1,4 +1,4 @@
-import leaflet, {point} from 'leaflet'
+import leaflet from 'leaflet'
 
 /** As a build step, our markdown files and the routes between
  * locations are processed into JSON. This fetches them
@@ -44,7 +44,7 @@ export function initializeMap(container) {
 
   const mapboxURL =
     'https://api.mapbox.com/styles/v1/dtcguo/' +
-    '{id}/tiles/{z}/{x}/{y}?access_token={accessToken}'
+    '{id}/tiles/{z}/{x}/{y}@2x?access_token={accessToken}'
 
   leaflet
     .tileLayer(mapboxURL, {
