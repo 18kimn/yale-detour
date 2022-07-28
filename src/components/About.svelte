@@ -36,27 +36,28 @@
         Yale’s empire-building.
       </p>
       <p>
-        The Yale Detour seeks to complicate readers’ conception of
-        Yale as a beacon of prestige and opportunity. We see the
-        COVID-19 pandemic and the university’s subsequent shutdown as
-        a moment of possibilty in this regard; this is a chance to
-        reorient and reimagine how we interact with the space Yale
-        occupies in New Haven. While Yale certainly lives up to its
-        promise of granting special status to inheritors of its name
-        and legacy, it does so at a price. That price is protection of
-        the status quo, a stasis ensuring that power is left
-        untouched, in fact, strengthened. Centuries of domination and
-        control create(d) Yale and bring life to its educational
-        mission of “improving” the world. Divorcing past from present
-        safeguards every tower, dining hall, statue, museum,
-        stained-glass window, and even restroom from subversion and
-        rupture.
+        The Yale Detour is a digital exhibit that seeks to complicate
+        readers’ conception of Yale as a beacon of prestige and
+        opportunity. We see the COVID-19 pandemic and the university’s
+        subsequent shutdown as a moment of possibilty in this regard;
+        this is a chance to reorient and reimagine how we interact
+        with the space Yale occupies in New Haven. While Yale
+        certainly lives up to its promise of granting special status
+        to inheritors of its name and legacy, it does so at a price.
+        That price is protection of the status quo, a stasis ensuring
+        that power is left untouched, in fact, strengthened. Centuries
+        of domination and control create(d) Yale and bring life to its
+        educational mission of “improving” the world. Divorcing past
+        from present safeguards every tower, dining hall, statue,
+        museum, stained-glass window, and even restroom from
+        subversion and rupture.
       </p>
       <p>
         Still, as totalizing as empire and power appear at Yale, they
         are also made fragile by bringing the university’s colonial
         origins to the fore. When boundaries between the past,
         present, and future are collapsed, power’s protection withers.
+        The Yale Detour is our attack at those boundaries.
         <strong>
           While traditional tours are meant to impart familiarity and
           comfort, this project is not intended to provide answers or

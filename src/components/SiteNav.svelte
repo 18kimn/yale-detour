@@ -5,7 +5,7 @@
   import Glitch from './Glitch.svelte'
   import Modal from './Modal.svelte'
   import About from './About.svelte'
-  import Contact from './Contact.svelte'
+  import Credits from './Credits.svelte'
 
   let showingModal = false
   let modalComponent = About
@@ -68,9 +68,9 @@ aria-hidden=true property on the main site content -->
       >
       <button
         on:click={() => {
-          modalComponent = Contact
+          modalComponent = Credits
           showingModal = true
-        }}>Contact us</button
+        }}>Credits</button
       >
       {#if $guided}
         <button on:click={() => guided.set(false)}
@@ -94,9 +94,9 @@ aria-hidden=true property on the main site content -->
         >
         <button
           on:click={() => {
-            modalComponent = Contact
+            modalComponent = Credits
             showingModal = true
-          }}>Contact us</button
+          }}>Credits</button
         >
         {#if $guided}
           <button on:click={() => guided.set(false)}

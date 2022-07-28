@@ -27,6 +27,7 @@
       }
     ],
     "valid-jsdoc": "off",
+    "indent": ["error", 4, {"SwitchCase": 1}],
     "no-unused-vars": ["error", {"varsIgnorePattern": "_"}],
     "no-multi-spaces": "error",
     "no-invalid-this": "error",

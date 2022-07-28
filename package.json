@@ -41,7 +41,8 @@
     "sharp": "^0.29.3",
     "svelte": "^3.46.3",
     "svelte-check": "^2.4.5",
-    "vite": "^2.7.13"
+    "vite": "^2.7.13",
+    "vite-plugin-compile-time": "^0.1.2"
   },
   "dependencies": {
     "leaflet": "^1.7.1"
