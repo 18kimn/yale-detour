@@ -107,7 +107,13 @@
         Resty to collaborate on the codebase. He also proposed
         combining the CC tour and the <em>Education and Empire</em>
         zine to Amy and Jose, who in turn invited Dora to help with the
-        conversion and especially with the website design.
+        conversion and especially with the website design. Dora's
+        <a
+          href="https://www.figma.com/file/lTtl9W2cWwjqMjGINLJ0Wo/Style-Guide-YCritical-Tour"
+          target="_blank"
+          rel="noreferrer">wireframes for a revamped design</a
+        > and Nathan's partial rewrite of the tour's codebase led to the
+        Yale Detour as it is presented today.
       </p>
     </section>
 
@@ -122,7 +128,7 @@
         criticism from you, the reader. If you're interested in
         helping maintain, improve, or extend this site, or otherwise
         would like to discuss the Yale Detour, please reach out to
-        Nathan Kim at nathan.kim@yale.edu!
+        Resty Fufunan at resty.fufunan@yale.edu!
       </p>
     </section>
   </div>
